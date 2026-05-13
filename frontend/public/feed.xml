@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+  <channel>
+    <title>Neural Newz Daily</title>
+    <link>https://neural-newz.netlify.app/</link>
+    <language>en-us</language>
+    <description>Daily AI news and research papers curated from top labs and VC firms.</description>
+    <itunes:author>Neural Newz</itunes:author>
+    <itunes:category text="Technology"/>
+    <item>
+      <title>Neural Newz Daily - May 13, 2026</title>
+      <description>Welcome to Neural Newz. There were no major AI breakthroughs in the last 24 hours. See you tomorrow!...</description>
+      <enclosure url="https://neural-newz.netlify.app//episodes/episode_20260513.mp3" type="audio/mpeg" length="53136"/>
+      <pubDate>Wed, 13 May 2026 19:28:54 GMT</pubDate>
+      <guid>https://neural-newz.netlify.app//episodes/episode_20260513.mp3</guid>
+    </item>
+  </channel>
+</rss>
