@@ -1,5 +1,4 @@
 import os
-import json
 from parallel import Parallel
 from dotenv import load_dotenv
 
@@ -59,17 +58,32 @@ def fetch_all_daily_content():
 
         run_result = client.task_run.result(task_run.run_id, api_timeout=600)
 
-        # Extract the items from the result
+        # Extract the items from the result — handle all possible output types
         output = run_result.output
-        if hasattr(output, 'content'):
+        data = {}
+
+        if hasattr(output, 'content') and isinstance(output.content, dict):
+            # Object with a 'content' dict attribute
             data = output.content
+        elif hasattr(output, 'model_dump'):
+            # Pydantic model — convert to dict
+            data = output.model_dump()
         elif isinstance(output, dict):
+            # Already a plain dict
             data = output
         else:
-            data = {}
+            # Last resort: try converting to dict
+            try:
+                data = dict(output)
+            except Exception:
+                print("Warning: Could not parse Parallel AI output format.")
+                data = {}
 
         items = data.get("items", [])
-        print(f"Parallel AI found {len(items)} items.")
+        if not items:
+            print("Warning: Parallel AI returned no items. Raw output:", output)
+        else:
+            print(f"Parallel AI found {len(items)} items.")
         return items
 
     except Exception as e:
