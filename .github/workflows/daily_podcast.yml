@@ -1,0 +1,54 @@
+name: Neural News Daily Automation
+
+on:
+  schedule:
+    # Runs at 12:00 UTC every day
+    - cron: '0 12 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        # Fetch full history to allow pushing
+        fetch-depth: 0
+        
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+        
+    - name: Install dependencies
+      run: |
+        cd backend
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Run Neural News Pipeline
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        RESEND_AUDIENCE_ID: ${{ secrets.RESEND_AUDIENCE_ID }}
+        SUBSCRIBERS_EMAIL: ${{ secrets.SUBSCRIBERS_EMAIL }}
+        BASE_URL: ${{ secrets.BASE_URL }}
+        FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
+      run: |
+        cd backend
+        python main.py
+        
+    - name: Commit and push changes
+      # This step commits the new mp3 and feed.xml back to the repository
+      # so that Vercel can deploy the updated frontend with the new podcast episode
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add frontend/public/episodes/ frontend/public/feed.xml frontend/public/episodes_meta.json
+        # Only commit if there are changes
+        git diff --staged --quiet || (git commit -m "chore: add daily podcast episode" && git push)
