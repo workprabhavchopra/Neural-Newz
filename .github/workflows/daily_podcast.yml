@@ -46,10 +46,13 @@ jobs:
         
     - name: Commit and push changes
       # This step commits the new mp3 and feed.xml back to the repository
-      # so that Vercel can deploy the updated frontend with the new podcast episode
+      # so that Netlify can deploy the updated frontend with the new podcast episode
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add frontend/public/episodes/ frontend/public/feed.xml frontend/public/episodes_meta.json
-        # Only commit if there are changes
+        # Use || true to avoid failing if files don't exist yet on first run
+        git add frontend/public/episodes/ || true
+        git add frontend/public/feed.xml || true
+        git add frontend/public/episodes_meta.json || true
+        # Only commit if there are staged changes
         git diff --staged --quiet || (git commit -m "chore: add daily podcast episode" && git push)
