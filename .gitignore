@@ -20,6 +20,8 @@ var/
 .installed.cfg
 *.egg
 .env
+backend/.env
+*.env
 venv/
 ENV/
 env.bak/
