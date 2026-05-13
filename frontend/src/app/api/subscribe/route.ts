@@ -31,10 +31,10 @@ export async function POST(request: Request) {
     } else {
       // Fallback: Send a welcome email directly if no Audience ID is configured
       await resend.emails.send({
-        from: 'Neural News <onboarding@resend.dev>', // Change to your verified domain in production
+        from: 'Neural Newz <onboarding@resend.dev>', // Change to your verified domain in production
         to: email,
-        subject: 'Welcome to Neural News!',
-        html: '<div style="font-family: sans-serif; text-align: center;"><h1 style="color: #4F46E5;">Welcome!</h1><p>You are now subscribed to Neural News daily AI intelligence updates.</p></div>'
+        subject: 'Welcome to Neural Newz!',
+        html: '<div style="font-family: sans-serif; text-align: center;"><h1 style="color: #4F46E5;">Welcome!</h1><p>You are now subscribed to Neural Newz daily AI intelligence updates.</p></div>'
       });
     }
 

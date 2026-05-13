@@ -34,6 +34,7 @@ jobs:
     - name: Run Neural News Pipeline
       env:
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        PARALLEL_API_KEY: ${{ secrets.PARALLEL_API_KEY }}
         RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
         RESEND_AUDIENCE_ID: ${{ secrets.RESEND_AUDIENCE_ID }}
         SUBSCRIBERS_EMAIL: ${{ secrets.SUBSCRIBERS_EMAIL }}

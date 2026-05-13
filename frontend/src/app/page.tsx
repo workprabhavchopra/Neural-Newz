@@ -29,7 +29,7 @@ export default function Home() {
         setStatus("error");
         setMessage(data.error || "Something went wrong.");
       }
-    } catch (err) {
+    } catch {
       setStatus("error");
       setMessage("Network error. Please try again.");
     }
@@ -42,7 +42,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <BrainCircuit className="w-6 h-6 text-indigo-500" />
-            <span className="font-semibold text-lg tracking-tight text-white">NeuralNews</span>
+            <span className="font-semibold text-lg tracking-tight text-white">Neural Newz</span>
           </div>
           <div className="flex items-center gap-4">
             <a href="#subscribe" className="text-sm font-medium bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-full transition-all">
@@ -129,7 +129,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">Curated Intelligence</h3>
               <p className="text-slate-400 leading-relaxed">
-                We track OpenAI, DeepMind, Anthropic, a16z, and arXiv so you don't miss a single breakthrough.
+                We track OpenAI, DeepMind, Anthropic, a16z, and arXiv so you don&apos;t miss a single breakthrough.
               </p>
             </div>
             <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-500/30 transition-colors group">
@@ -158,9 +158,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between text-slate-500 text-sm">
           <div className="flex items-center gap-2 mb-4 md:mb-0">
             <BrainCircuit className="w-5 h-5 text-indigo-500" />
-            <span className="font-semibold text-white">NeuralNews</span>
+            <span className="font-semibold text-white">Neural Newz</span>
           </div>
-          <p>© {new Date().getFullYear()} NeuralNews Automation. Built with AI.</p>
+          <p>© {new Date().getFullYear()} Neural Newz Automation. Built with AI.</p>
         </div>
       </footer>
     </div>

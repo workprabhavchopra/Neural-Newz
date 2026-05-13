@@ -1,8 +1,6 @@
 requests
-feedparser
-beautifulsoup4
-elevenlabs
-openai
+parallel-web
+edge-tts
 google-genai
 resend
 python-dotenv
