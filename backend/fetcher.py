@@ -51,7 +51,8 @@ def fetch_all_daily_content():
     try:
         task_run = client.task_run.create(
             input="Find ALL the top AI announcements, product releases, and research papers from the last 24 hours. Search official blogs of OpenAI, Google DeepMind, Anthropic, Hugging Face, Mistral, Meta AI, top VC firms like a16z, and ArXiv. Return every significant announcement you find, do not limit to just 5.",
-            output_schema=output_schema
+            processor="pro",
+            task_spec={"output_schema": output_schema}
         )
 
         print(f"Parallel task started (ID: {task_run.run_id}). Waiting for autonomous agent to finish research...")
