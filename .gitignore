@@ -27,8 +27,5 @@ ENV/
 env.bak/
 venv.bak/
 
-# Project specifics
+# Project specifics - only ignore temp local test files
 podcast.mp3
-frontend/public/episodes/
-frontend/public/feed.xml
-frontend/public/episodes_meta.json
