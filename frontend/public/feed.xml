@@ -1,55 +1,89 @@
 <?xml version="1.0" ?>
-<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
   <channel>
     <title>Neural Newz Daily</title>
     <link>https://neural-newz.netlify.app/</link>
     <language>en-us</language>
-    <description>Daily AI news and research papers curated from top labs and VC firms.</description>
+    <description>Your daily deep-dive into AI. Neural Newz covers the latest breakthroughs, product launches, and research from the world's top AI labs — explained clearly for anyone who wants to stay ahead.</description>
     <itunes:author>Neural Newz</itunes:author>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+    <itunes:image href="https://neural-newz.netlify.app//cover.jpg"/>
     <itunes:category text="Technology"/>
+    <itunes:category text="Education"/>
+    <item>
+      <title>Neural Newz Daily — 14 May 2026</title>
+      <description>Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.</description>
+      <itunes:summary>Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://neural-newz.netlify.app//episodes/neural-newz-daily-14-may-2026_20260514.mp3" type="audio/mpeg" length="163675"/>
+      <pubDate>Thu, 14 May 2026 18:26:10 GMT</pubDate>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/neural-newz-daily-14-may-2026_20260514.mp3</guid>
+    </item>
     <item>
       <title>Neural Newz Daily - May 14, 2026</title>
       <description>Welcome to Neural Newz. There were no major AI breakthroughs in the last 24 hours. See you tomorrow!...</description>
+      <itunes:summary>Welcome to Neural Newz. There were no major AI breakthroughs in the last 24 hours. See you tomorrow!...</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
       <enclosure url="https://neural-newz.netlify.app//episodes/episode_20260514.mp3" type="audio/mpeg" length="163675"/>
       <pubDate>Thu, 14 May 2026 11:32:21 GMT</pubDate>
-      <guid>https://neural-newz.netlify.app//episodes/episode_20260514.mp3</guid>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/episode_20260514.mp3</guid>
     </item>
     <item>
       <title>Neural Newz Daily - May 13, 2026</title>
       <description>Welcome to Neural Newz, your daily download on the latest breakthroughs and essential updates in the world of artificial intelligence. I'm your host, and today we're diving into some truly fascinating developments, from advanced algorithmic design to critical advancements in LLM efficiency and reliability.
 
 First up, a major announcement from **Google DeepMind**, who have unveiled **AlphaEvolve**. This isn't just another coding tool; it's an evolutionary coding agent powered by Gemini, designed ...</description>
+      <itunes:summary>Welcome to Neural Newz, your daily download on the latest breakthroughs and essential updates in the world of artificial intelligence. I'm your host, and today we're diving into some truly fascinating developments, from advanced algorithmic design to critical advancements in LLM efficiency and reliability.
+
+First up, a major announcement from **Google DeepMind**, who have unveiled **AlphaEvolve**. This isn't just another coding tool; it's an evolutionary coding agent powered by Gemini, designed ...</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
       <enclosure url="https://neural-newz.netlify.app//episodes/episode_20260513.mp3" type="audio/mpeg" length="1880640"/>
       <pubDate>Wed, 13 May 2026 11:41:21 GMT</pubDate>
-      <guid>https://neural-newz.netlify.app//episodes/episode_20260513.mp3</guid>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/episode_20260513.mp3</guid>
     </item>
     <item>
       <title>Neural Newz Daily - May 13, 2026</title>
       <description>Welcome to Neural Newz. There were no major AI breakthroughs in the last 24 hours. See you tomorrow!...</description>
+      <itunes:summary>Welcome to Neural Newz. There were no major AI breakthroughs in the last 24 hours. See you tomorrow!...</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
       <enclosure url="https://neural-newz.netlify.app//episodes/episode_20260513.mp3" type="audio/mpeg" length="53280"/>
       <pubDate>Wed, 13 May 2026 11:23:43 GMT</pubDate>
-      <guid>https://neural-newz.netlify.app//episodes/episode_20260513.mp3</guid>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/episode_20260513.mp3</guid>
     </item>
     <item>
       <title>Neural Newz Daily - May 13, 2026</title>
       <description>Welcome to Neural Newz. There were no major AI breakthroughs in the last 24 hours. See you tomorrow!...</description>
+      <itunes:summary>Welcome to Neural Newz. There were no major AI breakthroughs in the last 24 hours. See you tomorrow!...</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
       <enclosure url="https://neural-newz.netlify.app//episodes/episode_20260513.mp3" type="audio/mpeg" length="53280"/>
       <pubDate>Wed, 13 May 2026 11:20:01 GMT</pubDate>
-      <guid>https://neural-newz.netlify.app//episodes/episode_20260513.mp3</guid>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/episode_20260513.mp3</guid>
     </item>
     <item>
       <title>Neural Newz Daily - May 13, 2026</title>
       <description>Welcome to Neural Newz. There were no major AI breakthroughs in the last 24 hours. See you tomorrow!...</description>
+      <itunes:summary>Welcome to Neural Newz. There were no major AI breakthroughs in the last 24 hours. See you tomorrow!...</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
       <enclosure url="https://neural-newz.netlify.app//episodes/episode_20260513.mp3" type="audio/mpeg" length="53280"/>
       <pubDate>Wed, 13 May 2026 11:16:22 GMT</pubDate>
-      <guid>https://neural-newz.netlify.app//episodes/episode_20260513.mp3</guid>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/episode_20260513.mp3</guid>
     </item>
     <item>
       <title>Neural Newz Daily - May 13, 2026</title>
       <description>Welcome to Neural Newz. There were no major AI breakthroughs in the last 24 hours. See you tomorrow!...</description>
+      <itunes:summary>Welcome to Neural Newz. There were no major AI breakthroughs in the last 24 hours. See you tomorrow!...</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
       <enclosure url="https://neural-newz.netlify.app//episodes/episode_20260513.mp3" type="audio/mpeg" length="53280"/>
       <pubDate>Wed, 13 May 2026 11:15:20 GMT</pubDate>
-      <guid>https://neural-newz.netlify.app//episodes/episode_20260513.mp3</guid>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/episode_20260513.mp3</guid>
     </item>
   </channel>
 </rss>
