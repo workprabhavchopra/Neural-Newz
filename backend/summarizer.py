@@ -1,4 +1,6 @@
 import os
+import re
+from datetime import datetime
 from google import genai
 from dotenv import load_dotenv
 
@@ -10,6 +12,52 @@ try:
 except Exception as e:
     print(f"Warning: Gemini API Key not found. {e}")
     client = None
+
+def slugify(text):
+    """Converts a title string to a safe, lowercase filename slug."""
+    text = text.lower()
+    text = re.sub(r'[^\w\s-]', '', text)      # Remove special chars except hyphens
+    text = re.sub(r'[\s_]+', '-', text)         # Replace spaces/underscores with hyphens
+    text = re.sub(r'-+', '-', text)              # Collapse multiple hyphens
+    return text.strip('-')
+
+def generate_episode_title(content_items):
+    """Uses Gemini to create a catchy, news-based episode title with the date."""
+    date_str = datetime.now().strftime("%d %B %Y").lstrip("0")  # e.g. "14 May 2026"
+
+    if not content_items or not client:
+        return f"Neural Newz Daily — {date_str}"
+
+    # Pull just the top headlines for the prompt
+    headlines = "\n".join([f"- [{item['source']}] {item['title']}" for item in content_items[:6]])
+
+    prompt = f"""
+    You are writing a podcast episode title for "Neural Newz", a daily AI news podcast.
+    Based on the top stories below, generate ONE catchy, punchy episode title that:
+    - Highlights the 1-2 biggest stories of the day (mention company names, products, or themes)
+    - Ends with the date: "{date_str}"
+    - Uses a separator like " | " or " + " between the headline and the date
+    - Is under 80 characters total
+    - Sounds like a professional podcast episode, NOT a news headline
+
+    Top stories today:
+    {headlines}
+
+    Return ONLY the title, nothing else. No quotes, no explanation.
+    """
+
+    try:
+        response = client.models.generate_content(
+            model='gemini-2.5-flash',
+            contents=prompt,
+        )
+        title = response.text.strip().strip('"').strip("'")
+        print(f"Generated episode title: {title}")
+        return title
+    except Exception as e:
+        print(f"Error generating episode title: {e}")
+        return f"Neural Newz Daily — {date_str}"
+
 
 def generate_podcast_script(content_items):
     """Generates a conversational podcast script from the news items using Gemini."""

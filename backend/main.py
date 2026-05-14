@@ -4,7 +4,7 @@ from email.utils import formatdate
 import json
 
 from fetcher import fetch_all_daily_content
-from summarizer import generate_podcast_script, generate_newsletter_html
+from summarizer import generate_podcast_script, generate_newsletter_html, generate_episode_title, slugify
 from audio_generator import generate_podcast_audio
 from publisher import generate_rss_feed
 from mailer import send_daily_newsletter
@@ -15,13 +15,20 @@ def main():
     # 1. Fetch Content
     content = fetch_all_daily_content()
     
-    # 2. Generate Podcast Script
+    # 2. Generate a catchy, news-based episode title
+    episode_title = generate_episode_title(content)
+    print(f"Episode title: {episode_title}")
+
+    # 3. Generate Podcast Script
     script = generate_podcast_script(content)
     print("Podcast Script preview:\n", script[:200] + "...")
     
-    # 3. Generate Audio
+    # 4. Generate Audio — filename is a slug of the episode title
     date_str = datetime.now().strftime("%Y%m%d")
-    audio_filename = f"episode_{date_str}.mp3"
+    slug = slugify(episode_title)
+    # Keep it reasonably short for the filesystem: slug up to 60 chars + date
+    safe_slug = slug[:60].rstrip('-')
+    audio_filename = f"{safe_slug}_{date_str}.mp3"
     
     # The audio should be saved into the frontend/public/episodes folder so it's hosted by Netlify
     os.makedirs("../frontend/public/episodes", exist_ok=True)
@@ -40,7 +47,7 @@ def main():
     if generated_audio_path:
         audio_size = os.path.getsize(generated_audio_path)
         new_episode = {
-            "title": f"Neural Newz Daily - {datetime.now().strftime('%b %d, %Y')}",
+            "title": episode_title,
             "description": script[:500] + "...",
             "audio_url": f"episodes/{audio_filename}",
             "length": audio_size,
