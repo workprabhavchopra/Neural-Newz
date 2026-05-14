@@ -60,26 +60,40 @@ def generate_episode_title(content_items):
 
 
 def generate_episode_description(content_items, episode_title):
-    """Uses Gemini to write a compelling, Spotify-ready episode description."""
+    """Uses Gemini to write a compelling, curiosity-driven Spotify episode description."""
     if not content_items or not client:
         return "Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs."
 
-    headlines = "\n".join([f"- [{item['source']}] {item['title']}" for item in content_items])
+    # Give Gemini the companies and topics involved, but not the detailed analysis
+    topics = "\n".join([f"- [{item['source']}] {item['title']}" for item in content_items])
 
     prompt = f"""
-    You are writing a podcast episode description for Spotify and Apple Podcasts for an episode titled:
-    "{episode_title}"
+    You are a podcast producer writing an episode description for "Neural Newz", a daily AI intelligence podcast.
+    The episode is titled: "{episode_title}"
 
-    The episode covers these AI stories:
-    {headlines}
+    Study these real podcast description styles before writing:
 
-    Write a compelling episode description that:
-    - Opens with a punchy 1-sentence hook about why today's news is significant
-    - Lists the top 3-5 stories as bullet points with a brief (1 sentence) tease for each
-    - Closes with a 1-sentence call-to-action to subscribe and follow Neural Newz
-    - Is between 150-300 words total
-    - Uses plain text only (no markdown, no asterisks, no hashtags) since this will appear in podcast apps
-    - Sounds like a human wrote it, not a robot
+    HARD FORK STYLE (NYT Tech): Conversational, journalistic. Teases topics as open questions or stakes without giving away the answer. Example: "This week: OpenAI made a move that's got everyone asking questions about what comes next. Plus, we dig into why the biggest labs are suddenly very interested in one particular corner of academia — and what it signals."
+
+    NO PRIORS STYLE: Big-picture, strategic. Frames stories as inflection points. Uses "we unpack / we explore / we dig into" language. Focuses on WHY it matters, not WHAT happened.
+
+    LATENT SPACE STYLE: Technical but insider. Builds stakes with a provocative claim or question, then promises to explain it. 
+
+    The topics covered today are:
+    {topics}
+
+    Now write a description for Neural Newz that:
+    1. FIRST TWO LINES (most important — Spotify shows only these on mobile): Start with a punchy atmospheric sentence about the current state of AI, then one sentence teasing today's biggest theme WITHOUT naming specific findings or conclusions (e.g., "A major player just shifted strategy — and the implications are bigger than anyone is saying.")
+    2. A SHORT PARAGRAPH: Set the scene of today's AI landscape in 2-3 sentences. Reference which companies or domains are involved but frame it as questions or stakes — never reveal what actually happened.
+    3. "In this episode:" followed by 3-5 bullet points. Each bullet should use a curiosity gap: start with WHY, HOW, or WHAT — but end on the intrigue, not the answer. Format: plain text dashes, not markdown asterisks.
+    4. ONE closing sentence: A value proposition + soft CTA. E.g., "Follow Neural Newz and make every day in AI make sense."
+
+    STRICT RULES:
+    - Do NOT reveal conclusions, findings, benchmark scores, or specific outcomes
+    - Do NOT use markdown (no asterisks, no hashtags, no bold)
+    - Use plain text with line breaks between sections
+    - Keep total length between 180-280 words
+    - Sound like a human who's genuinely excited about AI wrote this
 
     Return ONLY the description text, nothing else.
     """
@@ -94,9 +108,8 @@ def generate_episode_description(content_items, episode_title):
         return description
     except Exception as e:
         print(f"Error generating episode description: {e}")
-        # Fallback: join the top story titles into a readable description
-        stories = ", ".join([item['title'] for item in content_items[:3]])
-        return f"Today on Neural Newz: {stories}. Subscribe for your daily AI briefing."
+        stories = " | ".join([item['source'] for item in content_items[:4]])
+        return f"Today on Neural Newz, we're cutting through the noise from {stories} and more. Tune in for your daily deep-dive into the world of AI. Follow Neural Newz to stay ahead of the curve."
 
 
 def generate_podcast_script(content_items):
