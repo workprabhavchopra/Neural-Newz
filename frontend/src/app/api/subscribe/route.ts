@@ -38,6 +38,30 @@ export async function POST(request: Request) {
       });
     }
 
+    // Trigger GitHub Action to send instant welcome newsletter
+    const githubPat = process.env.GITHUB_PAT;
+    if (githubPat) {
+      try {
+        await fetch('https://api.github.com/repos/workprabhavchopra/Neural-Newz/dispatches', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/vnd.github.v3+json',
+            'Authorization': `token ${githubPat}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            event_type: 'welcome_subscriber',
+            client_payload: { email: email }
+          })
+        });
+      } catch (err) {
+        console.error('Failed to trigger GitHub Action:', err);
+        // We don't fail the subscription if the welcome email trigger fails
+      }
+    } else {
+      console.warn('GITHUB_PAT not set. Skipping instant welcome email dispatch.');
+    }
+
     return NextResponse.json({ success: true, message: 'Successfully subscribed' });
   } catch (error) {
     console.error('Subscription error:', error);

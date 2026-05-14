@@ -1,0 +1,38 @@
+name: Instant Welcome Newsletter
+
+on:
+  repository_dispatch:
+    types: [welcome_subscriber]
+
+jobs:
+  send-welcome:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          cd backend
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+      - name: Run Welcome Mailer
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PARALLEL_AI_API_KEY: ${{ secrets.PARALLEL_AI_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
+          TARGET_EMAIL: ${{ github.event.client_payload.email }}
+        run: |
+          cd backend
+          python welcome_mailer.py

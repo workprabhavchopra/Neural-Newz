@@ -156,48 +156,61 @@ def generate_podcast_script(content_items):
         print(f"Error generating script: {e}")
         return "Welcome to Neural Newz. Unfortunately, there was an error generating today's script."
 
-def generate_newsletter_html(content_items, podcast_url=None):
+def generate_newsletter_html(content_items, podcast_url=None, is_welcome=False):
     """Generates the HTML content for the daily email newsletter."""
     if not content_items:
-        return "<h1>Neural Newz</h1><p>No major updates in the last 24 hours.</p>"
+        return "<h1 style='color: #F97316; font-family: sans-serif; text-align: center;'>Neural Newz</h1><p style='color: #fff; text-align: center; font-family: sans-serif;'>No major updates in the last 24 hours.</p>"
         
     print("Generating newsletter HTML...")
     
+    spotify_url = "https://open.spotify.com/show/0333gy3Hgpg1RIR6RtNrtgX?si=8Uc0NxrdRpOR71wqg8_n5Q"
+    
     html = f"""
-    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
-        <h1 style="color: #4F46E5; text-align: center;">Neural Newz Daily Intelligence</h1>
-        <p style="text-align: center; color: #666;">The noise of AI, turned into signal.</p>
-        <hr style="border: 1px solid #eee; margin: 20px 0;" />
+    <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #0a0a0a; color: #ffffff; padding: 30px; border-radius: 12px; border: 1px solid #222;">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <div style="display: inline-block; background-color: #F97316; color: #000; font-weight: 900; padding: 10px 14px; border-radius: 8px; font-size: 18px; margin-bottom: 15px;">NN</div>
+            <h1 style="color: #ffffff; margin: 0; font-size: 28px; font-weight: 800; letter-spacing: -0.5px;">Neural Newz</h1>
+            <p style="color: #F97316; margin-top: 8px; font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">Daily AI Intelligence</p>
+        </div>
     """
     
-    if podcast_url:
-        html += f"""
-        <div style="background-color: #F3F4F6; padding: 15px; border-radius: 8px; text-align: center; margin-bottom: 20px;">
-            <h3>🎧 Today's Podcast is Ready</h3>
-            <p>Prefer to listen? Catch up on today's AI news on the go.</p>
-            <a href="{podcast_url}" style="background-color: #4F46E5; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">Listen Now</a>
+    if is_welcome:
+        html += """
+        <div style="margin-bottom: 30px; padding: 20px; background-color: #111; border-left: 4px solid #F97316; border-radius: 0 8px 8px 0;">
+            <h2 style="margin-top: 0; font-size: 20px;">Welcome to the club.</h2>
+            <p style="color: #bbb; line-height: 1.6; margin-bottom: 0;">You're now subscribed to Neural Newz. To get you started instantly, here is a custom briefing on the absolute latest AI breakthroughs from the past 24 hours up to this very minute.</p>
         </div>
         """
+    
+    html += f"""
+        <div style="background-color: #111; padding: 25px; border-radius: 12px; border: 1px solid #222; text-align: center; margin-bottom: 40px;">
+            <h3 style="margin-top: 0; color: #fff; font-size: 18px;">🎧 Listen on Spotify</h3>
+            <p style="color: #888; font-size: 14px; margin-bottom: 20px;">Prefer to listen? Catch up on our latest expert-narrated AI deep dives on the go.</p>
+            <a href="{spotify_url}" style="background-color: #F97316; color: #000; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 15px; display: inline-block;">Open in Spotify</a>
+        </div>
+    """
 
-    html += "<h2 style='color: #111;'>📰 Today's Top Stories</h2><ul style='padding-left: 20px;'>"
+    html += "<h2 style='color: #ffffff; font-size: 22px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 20px;'>📰 Today's Intelligence</h2><div style='display: flex; flex-direction: column; gap: 30px;'>"
     for item in content_items:
         details = item.get('detailed_analysis', item.get('summary', ''))
-        # Truncate details for the email if it's too long (over 600 chars), since the full analysis is huge now
         if len(details) > 600:
-            details = details[:600] + "... <em>(Listen to the podcast for the full deep dive)</em>"
+            details = details[:600] + "... <br/><br/><em style='color: #F97316; font-size: 13px;'>Listen to the podcast for the full deep dive</em>"
             
         html += f"""
-        <li style="margin-bottom: 25px;">
-            <span style="font-size: 12px; font-weight: bold; color: #4F46E5; text-transform: uppercase;">{item['source']}</span><br/>
-            <a href="{item['link']}" style="font-size: 18px; color: #111; font-weight: bold; text-decoration: none;">{item['title']}</a>
-            <p style="font-size: 14px; line-height: 1.6; color: #444; margin: 8px 0 0 0;">{details}</p>
-        </li>
+        <div style="background-color: #111; padding: 20px; border-radius: 10px; border: 1px solid #222;">
+            <span style="display: inline-block; background-color: rgba(249,115,22,0.15); color: #F97316; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; margin-bottom: 10px;">{item['source']}</span><br/>
+            <a href="{item['link']}" style="font-size: 18px; color: #ffffff; font-weight: 700; text-decoration: none; line-height: 1.4; display: block; margin-bottom: 10px;">{item['title']}</a>
+            <p style="font-size: 14px; line-height: 1.6; color: #aaa; margin: 0;">{details}</p>
+        </div>
         """
-    html += "</ul>"
+    html += "</div>"
         
     html += """
-        <hr style="border: 1px solid #eee; margin: 20px 0;" />
-        <p style="font-size: 12px; text-align: center; color: #999;">You are receiving this because you subscribed to Neural Newz.</p>
+        <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #333; text-align: center;">
+            <p style="font-size: 12px; color: #666; margin: 0;">Neural Newz Automation · Built with AI</p>
+            <p style="font-size: 11px; color: #555; margin-top: 8px;">You are receiving this because you subscribed to Neural Newz.</p>
+        </div>
     </div>
     """
+    
     return html

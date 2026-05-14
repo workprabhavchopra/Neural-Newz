@@ -115,12 +115,11 @@ export default function Home() {
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", height: 64, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           {/* Logo */}
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <div style={{
-              width: 32, height: 32, background: "var(--orange)", borderRadius: 8,
-              display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0
-            }}>
-              <span style={{ color: "#000", fontWeight: 900, fontSize: 14, letterSpacing: "-0.5px" }}>NN</span>
-            </div>
+            <img 
+              src="/logo.png" 
+              alt="Neural Newz Logo" 
+              style={{ width: 32, height: 32, borderRadius: 8, objectFit: 'cover' }} 
+            />
             <span style={{ fontWeight: 700, fontSize: 17, letterSpacing: "-0.3px" }}>Neural Newz</span>
           </div>
 
@@ -369,12 +368,11 @@ export default function Home() {
           gap: 16
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <div style={{
-              width: 28, height: 28, background: "var(--orange)", borderRadius: 6,
-              display: "flex", alignItems: "center", justifyContent: "center"
-            }}>
-              <span style={{ color: "#000", fontWeight: 900, fontSize: 11 }}>NN</span>
-            </div>
+            <img 
+              src="/logo.png" 
+              alt="Neural Newz Logo" 
+              style={{ width: 28, height: 28, borderRadius: 6, objectFit: 'cover' }} 
+            />
             <span style={{ fontWeight: 700, fontSize: 15 }}>Neural Newz</span>
           </div>
           <p style={{ color: "var(--muted-2)", fontSize: 13 }}>
