@@ -4,7 +4,7 @@ from email.utils import formatdate
 import json
 
 from fetcher import fetch_all_daily_content
-from summarizer import generate_podcast_script, generate_newsletter_html, generate_episode_title, slugify
+from summarizer import generate_podcast_script, generate_newsletter_html, generate_episode_title, generate_episode_description, slugify
 from audio_generator import generate_podcast_audio
 from publisher import generate_rss_feed
 from mailer import send_daily_newsletter
@@ -22,6 +22,9 @@ def main():
     # 3. Generate Podcast Script
     script = generate_podcast_script(content)
     print("Podcast Script preview:\n", script[:200] + "...")
+
+    # 4. Generate episode description (for Spotify, RSS feed, and newsletter)
+    episode_description = generate_episode_description(content, episode_title)
     
     # 4. Generate Audio — filename is a slug of the episode title
     date_str = datetime.now().strftime("%Y%m%d")
@@ -48,7 +51,7 @@ def main():
         audio_size = os.path.getsize(generated_audio_path)
         new_episode = {
             "title": episode_title,
-            "description": script[:500] + "...",
+            "description": episode_description,
             "audio_url": f"episodes/{audio_filename}",
             "length": audio_size,
             "pub_date": formatdate(timeval=None, localtime=False, usegmt=True)

@@ -59,6 +59,46 @@ def generate_episode_title(content_items):
         return f"Neural Newz Daily — {date_str}"
 
 
+def generate_episode_description(content_items, episode_title):
+    """Uses Gemini to write a compelling, Spotify-ready episode description."""
+    if not content_items or not client:
+        return "Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs."
+
+    headlines = "\n".join([f"- [{item['source']}] {item['title']}" for item in content_items])
+
+    prompt = f"""
+    You are writing a podcast episode description for Spotify and Apple Podcasts for an episode titled:
+    "{episode_title}"
+
+    The episode covers these AI stories:
+    {headlines}
+
+    Write a compelling episode description that:
+    - Opens with a punchy 1-sentence hook about why today's news is significant
+    - Lists the top 3-5 stories as bullet points with a brief (1 sentence) tease for each
+    - Closes with a 1-sentence call-to-action to subscribe and follow Neural Newz
+    - Is between 150-300 words total
+    - Uses plain text only (no markdown, no asterisks, no hashtags) since this will appear in podcast apps
+    - Sounds like a human wrote it, not a robot
+
+    Return ONLY the description text, nothing else.
+    """
+
+    try:
+        response = client.models.generate_content(
+            model='gemini-2.5-flash',
+            contents=prompt,
+        )
+        description = response.text.strip()
+        print(f"Generated episode description ({len(description)} chars)")
+        return description
+    except Exception as e:
+        print(f"Error generating episode description: {e}")
+        # Fallback: join the top story titles into a readable description
+        stories = ", ".join([item['title'] for item in content_items[:3]])
+        return f"Today on Neural Newz: {stories}. Subscribe for your daily AI briefing."
+
+
 def generate_podcast_script(content_items):
     """Generates a conversational podcast script from the news items using Gemini."""
     if not content_items:
