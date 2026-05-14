@@ -128,7 +128,7 @@ export default function Home() {
           <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
             {hasSubscribed && (
               <a
-                href="https://open.spotify.com"
+                href="https://open.spotify.com/show/0333gy3Hgpg1RIR6RtNrtgX?si=8Uc0NxrdRpOR71wqg8_n5Q"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="animate-slide-right"
@@ -381,7 +381,7 @@ export default function Home() {
             © {new Date().getFullYear()} Neural Newz · Fully automated · Built with AI
           </p>
           <div style={{ display: "flex", gap: 24 }}>
-            <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer"
+            <a href="https://open.spotify.com/show/0333gy3Hgpg1RIR6RtNrtgX?si=8Uc0NxrdRpOR71wqg8_n5Q" target="_blank" rel="noopener noreferrer"
               style={{ color: "var(--muted)", fontSize: 13, textDecoration: "none", transition: "color 0.2s" }}
               onMouseEnter={e => (e.currentTarget.style.color = "var(--orange)")}
               onMouseLeave={e => (e.currentTarget.style.color = "var(--muted)")}>
