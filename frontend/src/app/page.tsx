@@ -1,33 +1,144 @@
 "use client";
 
-import { useState } from "react";
-import { Headphones, Mail, Sparkles, Zap, BrainCircuit, ArrowRight, Loader2, CheckCircle } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 
+// ─── Types ───────────────────────────────────────────────────────────────────
+interface Episode {
+  title: string;
+  description: string;
+  audio_url: string;
+  length: number;
+  pub_date: string;
+}
+
+// ─── Icons (inline SVG to avoid lucide dep issues) ───────────────────────────
+const SpotifyIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+  </svg>
+);
+
+const PlayIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+    <path d="M8 5v14l11-7z"/>
+  </svg>
+);
+
+const MailIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
+    <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+  </svg>
+);
+
+const CheckIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-5 h-5">
+    <path d="M20 6 9 17l-5-5"/>
+  </svg>
+);
+
+const ArrowIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 transition-transform group-hover:translate-x-1">
+    <path d="M5 12h14M12 5l7 7-7 7"/>
+  </svg>
+);
+
+const HeadphonesIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6">
+    <path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+  </svg>
+);
+
+const ZapIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6">
+    <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>
+  </svg>
+);
+
+const BrainIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6">
+    <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/>
+  </svg>
+);
+
+// ─── Sources Ticker ───────────────────────────────────────────────────────────
+const SOURCES = [
+  "OpenAI", "Google DeepMind", "Anthropic", "Meta AI", "Mistral",
+  "Hugging Face", "Stability AI", "ArXiv", "a16z", "Cohere",
+  "xAI", "Inflection", "Runway ML", "Scale AI", "Nvidia Research"
+];
+
+// ─── Helpers ──────────────────────────────────────────────────────────────────
+function formatDate(pubDate: string) {
+  try {
+    return new Date(pubDate).toLocaleDateString("en-GB", {
+      day: "numeric", month: "long", year: "numeric"
+    });
+  } catch { return pubDate; }
+}
+
+function formatDuration(lengthBytes: number) {
+  // Rough estimate: 192kbps MP3 = 24000 bytes/sec
+  const seconds = Math.round(lengthBytes / 24000);
+  const mins = Math.floor(seconds / 60);
+  const secs = seconds % 60;
+  if (mins === 0) return `${secs}s`;
+  return `${mins}m ${secs > 0 ? secs + "s" : ""}`.trim();
+}
+
+// Deduplicate episodes by audio_url, keep newest
+function dedupeEpisodes(episodes: Episode[]): Episode[] {
+  const seen = new Set<string>();
+  return episodes.filter(ep => {
+    if (seen.has(ep.audio_url)) return false;
+    seen.add(ep.audio_url);
+    return true;
+  });
+}
+
+// ─── Main Page ────────────────────────────────────────────────────────────────
 export default function Home() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
+  const [episodes, setEpisodes] = useState<Episode[]>([]);
+  const [hasSubscribed, setHasSubscribed] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  // Persist subscription state in localStorage
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("nn_subscribed");
+      if (stored === "true") setHasSubscribed(true);
+    }
+  }, []);
+
+  // Fetch episode history from static JSON
+  useEffect(() => {
+    fetch("/episodes_meta.json")
+      .then(r => r.json())
+      .then((data: Episode[]) => setEpisodes(dedupeEpisodes(data)))
+      .catch(() => {});
+  }, []);
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
-    
     try {
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       });
-      
       const data = await res.json();
-      
       if (res.ok) {
         setStatus("success");
-        setMessage("You're in! Welcome to the club.");
+        setMessage("You're in! Check your inbox for a welcome email.");
         setEmail("");
+        setHasSubscribed(true);
+        localStorage.setItem("nn_subscribed", "true");
       } else {
         setStatus("error");
-        setMessage(data.error || "Something went wrong.");
+        setMessage(data.error || "Something went wrong. Try again.");
       }
     } catch {
       setStatus("error");
@@ -35,134 +146,382 @@ export default function Home() {
     }
   };
 
+  const doubledSources = [...SOURCES, ...SOURCES];
+
   return (
-    <div className="min-h-screen bg-black text-slate-200 selection:bg-indigo-500/30 font-sans">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-black/50 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <BrainCircuit className="w-6 h-6 text-indigo-500" />
-            <span className="font-semibold text-lg tracking-tight text-white">Neural Newz</span>
+    <div style={{ background: "var(--bg)", color: "var(--white)", minHeight: "100vh" }}>
+
+      {/* ── NAV ── */}
+      <nav style={{
+        position: "fixed", top: 0, width: "100%", zIndex: 50,
+        borderBottom: "1px solid var(--border)",
+        background: "rgba(10,10,10,0.85)", backdropFilter: "blur(16px)"
+      }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", height: 64, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          {/* Logo */}
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <div style={{
+              width: 32, height: 32, background: "var(--orange)", borderRadius: 8,
+              display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0
+            }}>
+              <span style={{ color: "#000", fontWeight: 900, fontSize: 14, letterSpacing: "-0.5px" }}>NN</span>
+            </div>
+            <span style={{ fontWeight: 700, fontSize: 17, letterSpacing: "-0.3px" }}>Neural Newz</span>
           </div>
-          <div className="flex items-center gap-4">
-            <a href="#subscribe" className="text-sm font-medium bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-full transition-all">
-              Subscribe
+
+          {/* Nav Actions */}
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            {hasSubscribed && (
+              <a
+                href="https://open.spotify.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="animate-slide-right"
+                style={{
+                  display: "flex", alignItems: "center", gap: 8,
+                  background: "#1DB954", color: "#000",
+                  fontWeight: 700, fontSize: 13, padding: "8px 16px",
+                  borderRadius: 8, textDecoration: "none",
+                  transition: "all 0.2s ease"
+                }}
+                onMouseEnter={e => (e.currentTarget.style.transform = "translateY(-1px)")}
+                onMouseLeave={e => (e.currentTarget.style.transform = "translateY(0)")}
+              >
+                <SpotifyIcon />
+                Listen on Spotify
+              </a>
+            )}
+            <a
+              href="#subscribe"
+              style={{
+                fontSize: 13, fontWeight: 600,
+                color: "var(--white)",
+                border: "1px solid var(--border)",
+                padding: "8px 16px", borderRadius: 8,
+                textDecoration: "none",
+                transition: "all 0.2s ease",
+                background: "transparent"
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.borderColor = "var(--orange)";
+                e.currentTarget.style.color = "var(--orange)";
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.borderColor = "var(--border)";
+                e.currentTarget.style.color = "var(--white)";
+              }}
+            >
+              Subscribe Free
             </a>
           </div>
         </div>
       </nav>
 
-      <main className="pt-32 pb-20">
-        {/* Hero Section */}
-        <section className="max-w-7xl mx-auto px-6 relative">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none" />
-          
-          <div className="relative z-10 flex flex-col items-center text-center space-y-8 mt-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-sm font-medium">
-              <Sparkles className="w-4 h-4" />
-              <span>Daily AI Intelligence, Distilled</span>
+      <main style={{ paddingTop: 64 }}>
+
+        {/* ── HERO ── */}
+        <section style={{ maxWidth: 1200, margin: "0 auto", padding: "80px 24px 64px", position: "relative" }}>
+          {/* Orange glow blob */}
+          <div style={{
+            position: "absolute", top: "30%", left: "50%", transform: "translate(-50%,-50%)",
+            width: 500, height: 500,
+            background: "radial-gradient(circle, rgba(249,115,22,0.12) 0%, transparent 70%)",
+            borderRadius: "50%", pointerEvents: "none",
+            animation: "glow-breathe 6s ease-in-out infinite"
+          }} />
+
+          <div style={{ position: "relative", zIndex: 1, textAlign: "center" }}>
+
+            {/* Live badge */}
+            <div className="animate-fade-up" style={{
+              display: "inline-flex", alignItems: "center", gap: 8,
+              padding: "6px 14px", borderRadius: 99,
+              border: "1px solid rgba(249,115,22,0.3)",
+              background: "rgba(249,115,22,0.08)",
+              marginBottom: 32, fontSize: 12, fontWeight: 600,
+              color: "var(--orange)", letterSpacing: "0.08em", textTransform: "uppercase"
+            }}>
+              <span className="pulse-dot" style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--orange)", display: "inline-block" }} />
+              Daily at 6 PM IST · Fully Automated
             </div>
-            
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white max-w-4xl">
-              The noise of AI, <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
-                turned into signal.
+
+            {/* Headline */}
+            <h1 className="animate-fade-up delay-100" style={{
+              fontSize: "clamp(42px, 7vw, 88px)",
+              fontWeight: 900, lineHeight: 1.0,
+              letterSpacing: "-0.04em", marginBottom: 24,
+              fontFamily: "'Inter', sans-serif"
+            }}>
+              AI moves fast.<br />
+              <span style={{
+                background: "linear-gradient(135deg, var(--orange) 0%, #fff 60%)",
+                WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"
+              }}>
+                We move faster.
               </span>
             </h1>
-            
-            <p className="text-lg md:text-xl text-slate-400 max-w-2xl leading-relaxed">
-              We monitor the top AI labs, VC firms, and research papers daily. 
-              Get a concise, expertly narrated podcast and newsletter delivered straight to you.
+
+            {/* Sub */}
+            <p className="animate-fade-up delay-200" style={{
+              fontSize: "clamp(16px, 2vw, 20px)",
+              color: "var(--muted)", maxWidth: 560, margin: "0 auto 48px",
+              lineHeight: 1.65, fontWeight: 400
+            }}>
+              Every evening, we scan the world&apos;s top AI labs, research papers, and VC firms —
+              and distill it into one sharp podcast and newsletter.
             </p>
 
-            <div id="subscribe" className="w-full max-w-md mt-8">
+            {/* Subscribe Form */}
+            <div id="subscribe" className="animate-fade-up delay-300" style={{ maxWidth: 480, margin: "0 auto" }}>
               {status === "success" ? (
-                <div className="bg-green-500/10 border border-green-500/20 text-green-400 rounded-xl p-4 flex items-center justify-center gap-2">
-                  <CheckCircle className="w-5 h-5" />
-                  <span className="font-medium">{message}</span>
+                <div style={{
+                  background: "rgba(249,115,22,0.08)",
+                  border: "1px solid rgba(249,115,22,0.3)",
+                  borderRadius: 12, padding: "18px 24px",
+                  display: "flex", alignItems: "center", justifyContent: "center", gap: 10,
+                  color: "var(--orange)", fontWeight: 600
+                }}>
+                  <CheckIcon />
+                  {message}
                 </div>
               ) : (
-                <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
-                  <div className="relative flex-1">
-                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500" />
-                    <input 
-                      type="email" 
+                <form onSubmit={handleSubscribe} style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                  <div style={{ position: "relative" }}>
+                    <span style={{ position: "absolute", left: 16, top: "50%", transform: "translateY(-50%)", color: "var(--muted-2)" }}>
+                      <MailIcon />
+                    </span>
+                    <input
+                      ref={inputRef}
+                      type="email"
                       value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="name@example.com"
+                      onChange={e => setEmail(e.target.value)}
+                      placeholder="your@email.com"
                       required
                       disabled={status === "loading"}
-                      className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-12 pr-4 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all disabled:opacity-50"
+                      style={{
+                        width: "100%", padding: "15px 16px 15px 48px",
+                        background: "var(--surface)", border: "1px solid var(--border)",
+                        borderRadius: 10, color: "var(--white)", fontSize: 15,
+                        outline: "none", transition: "border-color 0.2s",
+                        fontFamily: "inherit"
+                      }}
+                      onFocus={e => (e.target.style.borderColor = "var(--orange)")}
+                      onBlur={e => (e.target.style.borderColor = "var(--border)")}
                     />
                   </div>
-                  <button 
+                  <button
                     type="submit"
                     disabled={status === "loading"}
-                    className="bg-white text-black font-semibold py-3 px-6 rounded-xl hover:bg-slate-200 transition-colors flex items-center justify-center gap-2 group disabled:opacity-50 min-w-[140px]"
+                    className="btn-orange group"
+                    style={{
+                      width: "100%", padding: "15px",
+                      fontSize: 15, fontWeight: 700,
+                      display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+                      border: "none", cursor: status === "loading" ? "not-allowed" : "pointer",
+                      opacity: status === "loading" ? 0.7 : 1
+                    }}
                   >
                     {status === "loading" ? (
-                      <Loader2 className="w-5 h-5 animate-spin" />
+                      <span style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                        <svg className="animate-spin" style={{ width: 18, height: 18 }} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+                        </svg>
+                        Subscribing...
+                      </span>
                     ) : (
                       <>
-                        Join Free
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        Get the Daily Brief — Free
+                        <ArrowIcon />
                       </>
                     )}
                   </button>
                 </form>
               )}
               {status === "error" && (
-                <p className="text-red-400 text-sm mt-2 text-center">{message}</p>
+                <p style={{ color: "#f87171", fontSize: 13, marginTop: 8, textAlign: "center" }}>{message}</p>
               )}
+              <p style={{ color: "var(--muted-2)", fontSize: 12, marginTop: 12 }}>
+                Join engineers, researchers & founders. No spam. Unsubscribe anytime.
+              </p>
             </div>
-            
-            <p className="text-sm text-slate-500">Join engineers, researchers, and founders.</p>
           </div>
         </section>
 
-        {/* Features Section */}
-        <section className="max-w-7xl mx-auto px-6 mt-40">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-indigo-500/30 transition-colors group">
-              <div className="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <BrainCircuit className="w-6 h-6 text-indigo-400" />
+        {/* ── MARQUEE TICKER ── */}
+        <div style={{
+          borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)",
+          overflow: "hidden", padding: "12px 0", marginBottom: 80,
+          background: "var(--surface)"
+        }}>
+          <div className="marquee-track" style={{ display: "flex", whiteSpace: "nowrap", width: "max-content" }}>
+            {doubledSources.map((s, i) => (
+              <span key={i} style={{
+                display: "inline-flex", alignItems: "center", gap: 20,
+                fontSize: 12, fontWeight: 600, letterSpacing: "0.12em",
+                textTransform: "uppercase", color: "var(--muted)",
+                padding: "0 32px"
+              }}>
+                {s}
+                <span style={{ color: "var(--orange)", fontSize: 8 }}>●</span>
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* ── FEATURES ── */}
+        <section style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px 80px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
+            {[
+              {
+                icon: <BrainIcon />, label: "Autonomous Research",
+                desc: "Our AI agent scans OpenAI, DeepMind, Anthropic, arXiv, and top VC firms every single day — so you never miss a breakthrough."
+              },
+              {
+                icon: <HeadphonesIcon />, label: "10-20 Min Deep Dives",
+                desc: "Not a surface-level summary. Every episode is a structured, expert-level breakdown of why today's news actually matters."
+              },
+              {
+                icon: <ZapIcon />, label: "Zero Noise",
+                desc: "No clickbait. No filler. No speculation. Just verified technical developments from the world's leading AI sources."
+              }
+            ].map((f, i) => (
+              <div
+                key={i}
+                className={`feature-card animate-fade-up delay-${(i + 3) * 100}`}
+              >
+                <div className="feature-icon" style={{
+                  width: 48, height: 48, borderRadius: 12,
+                  display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20
+                }}>
+                  {f.icon}
+                </div>
+                <h3 style={{ fontWeight: 700, fontSize: 18, marginBottom: 10, letterSpacing: "-0.02em" }}>{f.label}</h3>
+                <p style={{ color: "var(--muted)", lineHeight: 1.65, fontSize: 14 }}>{f.desc}</p>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">Curated Intelligence</h3>
-              <p className="text-slate-400 leading-relaxed">
-                We track OpenAI, DeepMind, Anthropic, a16z, and arXiv so you don&apos;t miss a single breakthrough.
-              </p>
-            </div>
-            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-500/30 transition-colors group">
-              <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Headphones className="w-6 h-6 text-purple-400" />
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-3">Studio Quality Podcast</h3>
-              <p className="text-slate-400 leading-relaxed">
-                Listen on Spotify or Apple Podcasts. Get your daily AI news while commuting.
-              </p>
-            </div>
-            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-pink-500/30 transition-colors group">
-              <div className="w-12 h-12 bg-pink-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Zap className="w-6 h-6 text-pink-400" />
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-3">Zero Fluff</h3>
-              <p className="text-slate-400 leading-relaxed">
-                No clickbait. No filler. Just the technical details, papers, and product releases that matter.
-              </p>
-            </div>
+            ))}
           </div>
         </section>
+
+        {/* ── DIVIDER ── */}
+        <div style={{ maxWidth: 1200, margin: "0 auto 64px", padding: "0 24px" }}>
+          <div style={{ height: 1, background: "linear-gradient(90deg, transparent, var(--border), transparent)" }} />
+        </div>
+
+        {/* ── EPISODE HISTORY ── */}
+        {episodes.length > 0 && (
+          <section style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px 100px" }}>
+            <div style={{ marginBottom: 40 }}>
+              <p style={{ color: "var(--orange)", fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 8 }}>Archive</p>
+              <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, letterSpacing: "-0.03em" }}>Past Episodes</h2>
+            </div>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              {episodes.map((ep, i) => {
+                const isLatest = i === 0;
+                return (
+                  <a
+                    key={ep.audio_url + i}
+                    href={`/${ep.audio_url}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="episode-card animate-fade-up"
+                    style={{
+                      display: "flex", alignItems: "center", gap: 20,
+                      padding: "20px 24px", textDecoration: "none", color: "inherit",
+                      animationDelay: `${0.1 * i}s`, opacity: 0
+                    }}
+                  >
+                    {/* Play button */}
+                    <div style={{
+                      width: 44, height: 44, borderRadius: "50%", flexShrink: 0,
+                      background: isLatest ? "var(--orange)" : "var(--surface-2)",
+                      border: `1px solid ${isLatest ? "var(--orange)" : "var(--border)"}`,
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      color: isLatest ? "#000" : "var(--muted)",
+                      transition: "all 0.2s"
+                    }}>
+                      <PlayIcon />
+                    </div>
+
+                    {/* Episode info */}
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 4 }}>
+                        <h3 style={{
+                          fontWeight: 700, fontSize: 15, letterSpacing: "-0.02em",
+                          overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap"
+                        }}>
+                          {ep.title}
+                        </h3>
+                        {isLatest && (
+                          <span style={{
+                            flexShrink: 0, fontSize: 10, fontWeight: 700,
+                            padding: "2px 8px", borderRadius: 4,
+                            background: "var(--orange)", color: "#000",
+                            letterSpacing: "0.06em", textTransform: "uppercase"
+                          }}>
+                            Latest
+                          </span>
+                        )}
+                      </div>
+                      <p style={{
+                        color: "var(--muted)", fontSize: 13, lineHeight: 1.5,
+                        overflow: "hidden", textOverflow: "ellipsis",
+                        display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical"
+                      }}>
+                        {ep.description}
+                      </p>
+                    </div>
+
+                    {/* Meta */}
+                    <div style={{ flexShrink: 0, textAlign: "right" }}>
+                      <div style={{ fontSize: 12, color: "var(--muted-2)", marginBottom: 4 }}>{formatDate(ep.pub_date)}</div>
+                      <div style={{ fontSize: 12, color: "var(--muted-2)" }}>{formatDuration(ep.length)}</div>
+                    </div>
+                  </a>
+                );
+              })}
+            </div>
+          </section>
+        )}
+
       </main>
 
-      <footer className="border-t border-white/10 py-10 mt-10">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between text-slate-500 text-sm">
-          <div className="flex items-center gap-2 mb-4 md:mb-0">
-            <BrainCircuit className="w-5 h-5 text-indigo-500" />
-            <span className="font-semibold text-white">Neural Newz</span>
+      {/* ── FOOTER ── */}
+      <footer style={{ borderTop: "1px solid var(--border)", padding: "40px 24px" }}>
+        <div style={{
+          maxWidth: 1200, margin: "0 auto",
+          display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between",
+          gap: 16
+        }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <div style={{
+              width: 28, height: 28, background: "var(--orange)", borderRadius: 6,
+              display: "flex", alignItems: "center", justifyContent: "center"
+            }}>
+              <span style={{ color: "#000", fontWeight: 900, fontSize: 11 }}>NN</span>
+            </div>
+            <span style={{ fontWeight: 700, fontSize: 15 }}>Neural Newz</span>
           </div>
-          <p>© {new Date().getFullYear()} Neural Newz Automation. Built with AI.</p>
+          <p style={{ color: "var(--muted-2)", fontSize: 13 }}>
+            © {new Date().getFullYear()} Neural Newz · Fully automated · Built with AI
+          </p>
+          <div style={{ display: "flex", gap: 24 }}>
+            <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer"
+              style={{ color: "var(--muted)", fontSize: 13, textDecoration: "none", transition: "color 0.2s" }}
+              onMouseEnter={e => (e.currentTarget.style.color = "var(--orange)")}
+              onMouseLeave={e => (e.currentTarget.style.color = "var(--muted)")}>
+              Spotify
+            </a>
+            <a href="/feed.xml" target="_blank" rel="noopener noreferrer"
+              style={{ color: "var(--muted)", fontSize: 13, textDecoration: "none", transition: "color 0.2s" }}
+              onMouseEnter={e => (e.currentTarget.style.color = "var(--orange)")}
+              onMouseLeave={e => (e.currentTarget.style.color = "var(--muted)")}>
+              RSS Feed
+            </a>
+          </div>
         </div>
       </footer>
+
     </div>
   );
 }
