@@ -20,13 +20,13 @@ def fetch_all_daily_content():
         "properties": {
             "items": {
                 "type": "array",
-                "description": "A list of all the top AI announcements and research papers from the last 24 hours.",
+                "description": "A comprehensive list of all major AI announcements, product releases, and research papers from the last 24 hours.",
                 "items": {
                     "type": "object",
                     "properties": {
                         "source": {
                             "type": "string",
-                            "description": "The name of the organization or publication (e.g., OpenAI, DeepMind, ArXiv)"
+                            "description": "The organization or publication (e.g., OpenAI, Google DeepMind, ArXiv)"
                         },
                         "title": {
                             "type": "string",
@@ -36,12 +36,12 @@ def fetch_all_daily_content():
                             "type": "string",
                             "description": "The URL to the original article or paper"
                         },
-                        "summary": {
+                        "detailed_analysis": {
                             "type": "string",
-                            "description": "A 2-3 sentence summary of the announcement or paper"
+                            "description": "A deep-dive analysis (at least 3-4 paragraphs) covering: 1. What it is. 2. Key technical details and innovations. 3. Why it matters to the AI industry. 4. Potential real-world applications or implications."
                         }
                     },
-                    "required": ["source", "title", "link", "summary"]
+                    "required": ["source", "title", "link", "detailed_analysis"]
                 }
             }
         },
@@ -50,7 +50,7 @@ def fetch_all_daily_content():
 
     try:
         task_run = client.task_run.create(
-            input="Find ALL the top AI announcements, product releases, and research papers from the last 24 hours. Search official blogs of OpenAI, Google DeepMind, Anthropic, Hugging Face, Mistral, Meta AI, top VC firms like a16z, and ArXiv. Return every significant announcement you find, do not limit to just 5.",
+            input="Find ALL the top AI announcements, product releases, and research papers from the exact last 24 hours. Search official blogs of OpenAI, Google DeepMind, Anthropic, Hugging Face, Mistral, Meta AI, top VC firms like a16z, and ArXiv. You must extract deep, highly detailed information about each announcement, not just a surface-level summary. Focus on technical depth and industry impact.",
             processor="pro",
             task_spec={"output_schema": output_schema}
         )

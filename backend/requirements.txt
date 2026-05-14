@@ -1,6 +1,7 @@
 requests
 parallel-web
-edge-tts
+kokoro-onnx
+soundfile
 google-genai
 resend
 python-dotenv

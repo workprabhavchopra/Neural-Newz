@@ -24,18 +24,25 @@ def generate_podcast_script(content_items):
     
     content_text = ""
     for idx, item in enumerate(content_items):
-        content_text += f"\n[{idx+1}] Source: {item['source']}\nTitle: {item['title']}\nSummary: {item['summary']}\n"
+        content_text += f"\n[{idx+1}] Source: {item['source']}\nTitle: {item['title']}\nDetailed Analysis: {item.get('detailed_analysis', item.get('summary', ''))}\n"
     
     prompt = f"""
-    You are the host of a daily 3-5 minute podcast called "Neural Newz". 
-    Your goal is to summarize the following daily AI news and research papers into an engaging, conversational, and highly technical but accessible script.
-    Read like a solo host. Use transitional phrases. Do not use sound effects or multiple voices, just a single continuous monologue.
-    Keep the tone professional, insightful, and slightly enthusiastic about AI breakthroughs.
+    You are the host of a daily, highly educational podcast called "Neural Newz". 
+    Your audience consists of people who are actively trying to learn about AI and stay up-to-date with the rapidly changing landscape.
     
-    Here is the news for today:
+    Your task is to write a deep-dive, 10-20 minute podcast script (APPROXIMATELY 1500 to 2500 WORDS). 
+    Do NOT just read the news. Act as an expert educator. For each topic:
+    - Explain the underlying technology and break down complex concepts using simple analogies.
+    - Discuss *why* this development matters and its potential impact on the industry.
+    - Provide practical context or real-world applications.
+    
+    Read like a solo host. Use smooth transitional phrases between topics. Keep the tone professional, insightful, and highly educational.
+    
+    Here is the detailed news and research for today:
     {content_text}
     
-    Write the final script exactly as it should be read by a text-to-speech engine. Do not include instructions like "[Upbeat Intro Music]". Just the spoken text.
+    Write the final script exactly as it should be read by the text-to-speech engine. Do not include instructions like "[Upbeat Intro Music]". Just the spoken text.
+    Ensure the script is long enough and detailed enough to hit the 1500+ word count mark.
     """
     
     try:
@@ -73,11 +80,16 @@ def generate_newsletter_html(content_items, podcast_url=None):
 
     html += "<h2 style='color: #111;'>📰 Today's Top Stories</h2><ul style='padding-left: 20px;'>"
     for item in content_items:
+        details = item.get('detailed_analysis', item.get('summary', ''))
+        # Truncate details for the email if it's too long (over 600 chars), since the full analysis is huge now
+        if len(details) > 600:
+            details = details[:600] + "... <em>(Listen to the podcast for the full deep dive)</em>"
+            
         html += f"""
-        <li style="margin-bottom: 15px;">
+        <li style="margin-bottom: 25px;">
             <span style="font-size: 12px; font-weight: bold; color: #4F46E5; text-transform: uppercase;">{item['source']}</span><br/>
-            <a href="{item['link']}" style="font-size: 16px; color: #111; font-weight: bold; text-decoration: none;">{item['title']}</a>
-            <p style="font-size: 14px; line-height: 1.5; color: #444; margin: 4px 0 0 0;">{item['summary']}</p>
+            <a href="{item['link']}" style="font-size: 18px; color: #111; font-weight: bold; text-decoration: none;">{item['title']}</a>
+            <p style="font-size: 14px; line-height: 1.6; color: #444; margin: 8px 0 0 0;">{details}</p>
         </li>
         """
     html += "</ul>"
