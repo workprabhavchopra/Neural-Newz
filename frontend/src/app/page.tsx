@@ -2,15 +2,6 @@
 
 import { useState, useEffect, useRef } from "react";
 
-// ─── Types ───────────────────────────────────────────────────────────────────
-interface Episode {
-  title: string;
-  description: string;
-  audio_url: string;
-  length: number;
-  pub_date: string;
-}
-
 // ─── Icons (inline SVG to avoid lucide dep issues) ───────────────────────────
 const SpotifyIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
@@ -67,40 +58,12 @@ const SOURCES = [
   "xAI", "Inflection", "Runway ML", "Scale AI", "Nvidia Research"
 ];
 
-// ─── Helpers ──────────────────────────────────────────────────────────────────
-function formatDate(pubDate: string) {
-  try {
-    return new Date(pubDate).toLocaleDateString("en-GB", {
-      day: "numeric", month: "long", year: "numeric"
-    });
-  } catch { return pubDate; }
-}
-
-function formatDuration(lengthBytes: number) {
-  // Rough estimate: 192kbps MP3 = 24000 bytes/sec
-  const seconds = Math.round(lengthBytes / 24000);
-  const mins = Math.floor(seconds / 60);
-  const secs = seconds % 60;
-  if (mins === 0) return `${secs}s`;
-  return `${mins}m ${secs > 0 ? secs + "s" : ""}`.trim();
-}
-
-// Deduplicate episodes by audio_url, keep newest
-function dedupeEpisodes(episodes: Episode[]): Episode[] {
-  const seen = new Set<string>();
-  return episodes.filter(ep => {
-    if (seen.has(ep.audio_url)) return false;
-    seen.add(ep.audio_url);
-    return true;
-  });
-}
 
 // ─── Main Page ────────────────────────────────────────────────────────────────
 export default function Home() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
-  const [episodes, setEpisodes] = useState<Episode[]>([]);
   const [hasSubscribed, setHasSubscribed] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -110,14 +73,6 @@ export default function Home() {
       const stored = localStorage.getItem("nn_subscribed");
       if (stored === "true") setHasSubscribed(true);
     }
-  }, []);
-
-  // Fetch episode history from static JSON
-  useEffect(() => {
-    fetch("/episodes_meta.json")
-      .then(r => r.json())
-      .then((data: Episode[]) => setEpisodes(dedupeEpisodes(data)))
-      .catch(() => {});
   }, []);
 
   const handleSubscribe = async (e: React.FormEvent) => {
@@ -402,87 +357,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── DIVIDER ── */}
-        <div style={{ maxWidth: 1200, margin: "0 auto 64px", padding: "0 24px" }}>
-          <div style={{ height: 1, background: "linear-gradient(90deg, transparent, var(--border), transparent)" }} />
-        </div>
 
-        {/* ── EPISODE HISTORY ── */}
-        {episodes.length > 0 && (
-          <section style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px 100px" }}>
-            <div style={{ marginBottom: 40 }}>
-              <p style={{ color: "var(--orange)", fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 8 }}>Archive</p>
-              <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, letterSpacing: "-0.03em" }}>Past Episodes</h2>
-            </div>
-
-            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              {episodes.map((ep, i) => {
-                const isLatest = i === 0;
-                return (
-                  <a
-                    key={ep.audio_url + i}
-                    href={`/${ep.audio_url}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="episode-card animate-fade-up"
-                    style={{
-                      display: "flex", alignItems: "center", gap: 20,
-                      padding: "20px 24px", textDecoration: "none", color: "inherit",
-                      animationDelay: `${0.1 * i}s`, opacity: 0
-                    }}
-                  >
-                    {/* Play button */}
-                    <div style={{
-                      width: 44, height: 44, borderRadius: "50%", flexShrink: 0,
-                      background: isLatest ? "var(--orange)" : "var(--surface-2)",
-                      border: `1px solid ${isLatest ? "var(--orange)" : "var(--border)"}`,
-                      display: "flex", alignItems: "center", justifyContent: "center",
-                      color: isLatest ? "#000" : "var(--muted)",
-                      transition: "all 0.2s"
-                    }}>
-                      <PlayIcon />
-                    </div>
-
-                    {/* Episode info */}
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 4 }}>
-                        <h3 style={{
-                          fontWeight: 700, fontSize: 15, letterSpacing: "-0.02em",
-                          overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap"
-                        }}>
-                          {ep.title}
-                        </h3>
-                        {isLatest && (
-                          <span style={{
-                            flexShrink: 0, fontSize: 10, fontWeight: 700,
-                            padding: "2px 8px", borderRadius: 4,
-                            background: "var(--orange)", color: "#000",
-                            letterSpacing: "0.06em", textTransform: "uppercase"
-                          }}>
-                            Latest
-                          </span>
-                        )}
-                      </div>
-                      <p style={{
-                        color: "var(--muted)", fontSize: 13, lineHeight: 1.5,
-                        overflow: "hidden", textOverflow: "ellipsis",
-                        display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical"
-                      }}>
-                        {ep.description}
-                      </p>
-                    </div>
-
-                    {/* Meta */}
-                    <div style={{ flexShrink: 0, textAlign: "right" }}>
-                      <div style={{ fontSize: 12, color: "var(--muted-2)", marginBottom: 4 }}>{formatDate(ep.pub_date)}</div>
-                      <div style={{ fontSize: 12, color: "var(--muted-2)" }}>{formatDuration(ep.length)}</div>
-                    </div>
-                  </a>
-                );
-              })}
-            </div>
-          </section>
-        )}
 
       </main>
 
