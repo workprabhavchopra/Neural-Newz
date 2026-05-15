@@ -167,8 +167,19 @@ def generate_newsletter_html(content_items, podcast_url=None, is_welcome=False):
     
     html = f"""
     <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #0a0a0a; color: #ffffff; padding: 30px; border-radius: 12px; border: 1px solid #222;">
+        
+        <table width="100%" style="margin-bottom: 10px; border-collapse: collapse;">
+            <tr>
+                <td style="text-align: left; vertical-align: middle;">
+                    <div style="display: inline-block; background-color: #F97316; color: #000; font-weight: 900; padding: 10px 14px; border-radius: 8px; font-size: 18px;">NN</div>
+                </td>
+                <td style="text-align: right; vertical-align: middle;">
+                    <a href="{spotify_url}" style="background-color: #F97316; color: #000; padding: 6px 12px; text-decoration: none; border-radius: 99px; font-weight: 700; font-size: 12px;">🎧 Listen on Spotify</a>
+                </td>
+            </tr>
+        </table>
+
         <div style="text-align: center; margin-bottom: 30px;">
-            <div style="display: inline-block; background-color: #F97316; color: #000; font-weight: 900; padding: 10px 14px; border-radius: 8px; font-size: 18px; margin-bottom: 15px;">NN</div>
             <h1 style="color: #ffffff; margin: 0; font-size: 28px; font-weight: 800; letter-spacing: -0.5px;">Neural Newz</h1>
             <p style="color: #F97316; margin-top: 8px; font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">Daily AI Intelligence</p>
         </div>
@@ -181,23 +192,15 @@ def generate_newsletter_html(content_items, podcast_url=None, is_welcome=False):
             <p style="color: #bbb; line-height: 1.6; margin-bottom: 0;">You're now subscribed to Neural Newz. To get you started instantly, here is a custom briefing on the absolute latest AI breakthroughs from the past 24 hours up to this very minute.</p>
         </div>
         """
-    
-    html += f"""
-        <div style="background-color: #111; padding: 25px; border-radius: 12px; border: 1px solid #222; text-align: center; margin-bottom: 40px;">
-            <h3 style="margin-top: 0; color: #fff; font-size: 18px;">🎧 Listen on Spotify</h3>
-            <p style="color: #888; font-size: 14px; margin-bottom: 20px;">Prefer to listen? Catch up on our latest expert-narrated AI deep dives on the go.</p>
-            <a href="{spotify_url}" style="background-color: #F97316; color: #000; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 15px; display: inline-block;">Open in Spotify</a>
-        </div>
-    """
 
-    html += "<h2 style='color: #ffffff; font-size: 22px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 20px;'>📰 Today's Intelligence</h2><div style='display: flex; flex-direction: column; gap: 30px;'>"
+    html += "<h2 style='color: #ffffff; font-size: 22px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 20px;'>📰 Today's Intelligence</h2><div style='display: block;'>"
     for item in content_items:
         details = item.get('detailed_analysis', item.get('summary', ''))
         if len(details) > 600:
-            details = details[:600] + "... <br/><br/><em style='color: #F97316; font-size: 13px;'>Listen to the podcast for the full deep dive</em>"
+            details = details[:600] + "..."
             
         html += f"""
-        <div style="background-color: #111; padding: 20px; border-radius: 10px; border: 1px solid #222;">
+        <div style="background-color: #111; padding: 20px; border-radius: 10px; border: 1px solid #222; margin-bottom: 20px;">
             <span style="display: inline-block; background-color: rgba(249,115,22,0.15); color: #F97316; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; margin-bottom: 10px;">{item['source']}</span><br/>
             <a href="{item['link']}" style="font-size: 18px; color: #ffffff; font-weight: 700; text-decoration: none; line-height: 1.4; display: block; margin-bottom: 10px;">{item['title']}</a>
             <p style="font-size: 14px; line-height: 1.6; color: #aaa; margin: 0;">{details}</p>
