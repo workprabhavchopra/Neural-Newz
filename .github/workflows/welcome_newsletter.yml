@@ -29,7 +29,7 @@ jobs:
       - name: Run Welcome Mailer
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          PARALLEL_AI_API_KEY: ${{ secrets.PARALLEL_AI_API_KEY }}
+          PARALLEL_API_KEY: ${{ secrets.PARALLEL_API_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
           TARGET_EMAIL: ${{ github.event.client_payload.email }}
