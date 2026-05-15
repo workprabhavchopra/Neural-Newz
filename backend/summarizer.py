@@ -179,24 +179,24 @@ def generate_newsletter_html(content_items, podcast_url=None, is_welcome=False):
             <p style="color: #cccccc; font-size: 14px;">You're now subscribed to Neural Newz. To get you started instantly, here is a custom briefing on the absolute latest AI breakthroughs from the past 24 hours up to this very minute.</p>
         </div>
         """
-        
-    html += f"""
+    else:
+        html += f"""
         <div style="background-color: #111111; padding: 20px; border-radius: 8px; text-align: center; margin-bottom: 30px; border: 1px solid #333333;">
             <h3 style="margin-top: 0; color: #ffffff; font-size: 18px;">🎧 Today's Podcast is Ready</h3>
             <p style="color: #cccccc; font-size: 14px; margin-bottom: 20px;">Prefer to listen? Catch up on today's AI news on the go.</p>
             <a href="{spotify_url}" style="background-color: #F97316; color: #000000; padding: 10px 20px; text-decoration: none; border-radius: 20px; font-weight: bold; font-size: 14px;">Listen on Spotify</a>
         </div>
-    """
+        """
 
     html += "<h2 style='color: #ffffff; font-size: 18px;'>📰 Top AI Announcements (Last 24 Hours)</h2><ul style='padding-left: 20px;'>"
     for item in content_items:
         details = item.get('detailed_analysis', item.get('summary', ''))
-        if len(details) > 600:
-            details = details[:600] + "..."
+        # Replace newlines with <br> to format paragraphs properly in HTML
+        details_html = details.replace('\n', '<br/>')
             
         html += f"""
         <li style="margin-bottom: 25px; color: #dddddd; line-height: 1.6; font-size: 15px;">
-            <span style="font-weight: bold; color: #ffffff;">[{item['source']}] <a href="{item['link']}" style="color: #F97316; text-decoration: none;">{item['title']}</a>:</span> {details}
+            <span style="font-weight: bold; color: #ffffff;">[{item['source']}] <a href="{item['link']}" style="color: #F97316; text-decoration: none;">{item['title']}</a>:</span><br/><br/>{details_html}
         </li>
         """
     html += "</ul>"
