@@ -12,6 +12,16 @@
     <itunes:category text="Technology"/>
     <itunes:category text="Education"/>
     <item>
+      <title>Neural Newz Daily — 17 May 2026</title>
+      <description>Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.</description>
+      <itunes:summary>Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://neural-newz.netlify.app//episodes/neural-newz-daily-17-may-2026_20260517.mp3" type="audio/mpeg" length="163675"/>
+      <pubDate>Sun, 17 May 2026 15:52:16 GMT</pubDate>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/neural-newz-daily-17-may-2026_20260517.mp3</guid>
+    </item>
+    <item>
       <title>OpenAI's Agentic Super-App + ChatGPT Finance | 16 May 2026</title>
       <description>The promise of truly intelligent software is no longer a distant dream, but a rapidly unfolding reality. Today, a major player is moving aggressively towards an entirely new paradigm of AI interaction, and the implications for how we live and work are immense.
 
