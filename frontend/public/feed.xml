@@ -12,6 +12,38 @@
     <itunes:category text="Technology"/>
     <itunes:category text="Education"/>
     <item>
+      <title>Hugging Face Debuts Agent Leaderboard | 19 May 2026</title>
+      <description>The race to build truly intelligent agents is heating up, defining the very future of AI's practical applications. Today, a major player is stepping in to shape how we measure progress — and the ripple effects could redefine the landscape for open innovation.
+
+From the biggest names in AI to cutting-edge research out of university labs, everyone is grappling with the challenge of evaluation, efficiency, and real-world application. We explore new frontiers in how models learn, how they interact with the world, and what it truly means to be intelligent when systems are constantly evolving.
+
+In this episode:
+- Why Hugging Face's new initiative for AI agents isn't just another benchmark, but a potential game-changer for open-source development and collaboration.
+- How researchers are tackling the incredibly complex task of improving speech recognition for languages like Chinese, unlocking new levels of contextual accuracy.
+- What it takes for AI to move beyond simple pattern matching and start genuinely solving solid geometric problems using a blend of neural and symbolic logic.
+- Why generating high-quality, verified data for AI's tool-calling abilities is proving to be a monumental challenge, and how one project aims to illuminate the path forward.
+- How we might need to completely rethink our evaluation methods for large language models, especially as their 'memory' and understanding evolve over time.
+
+Tune into Neural Newz and unravel the most exciting advancements shaping tomorrow's AI, today.</description>
+      <itunes:summary>The race to build truly intelligent agents is heating up, defining the very future of AI's practical applications. Today, a major player is stepping in to shape how we measure progress — and the ripple effects could redefine the landscape for open innovation.
+
+From the biggest names in AI to cutting-edge research out of university labs, everyone is grappling with the challenge of evaluation, efficiency, and real-world application. We explore new frontiers in how models learn, how they interact with the world, and what it truly means to be intelligent when systems are constantly evolving.
+
+In this episode:
+- Why Hugging Face's new initiative for AI agents isn't just another benchmark, but a potential game-changer for open-source development and collaboration.
+- How researchers are tackling the incredibly complex task of improving speech recognition for languages like Chinese, unlocking new levels of contextual accuracy.
+- What it takes for AI to move beyond simple pattern matching and start genuinely solving solid geometric problems using a blend of neural and symbolic logic.
+- Why generating high-quality, verified data for AI's tool-calling abilities is proving to be a monumental challenge, and how one project aims to illuminate the path forward.
+- How we might need to completely rethink our evaluation methods for large language models, especially as their 'memory' and understanding evolve over time.
+
+Tune into Neural Newz and unravel the most exciting advancements shaping tomorrow's AI, today.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://neural-newz.netlify.app//episodes/hugging-face-debuts-agent-leaderboard-19-may-2026_20260519.mp3" type="audio/mpeg" length="47332667"/>
+      <pubDate>Tue, 19 May 2026 19:54:51 GMT</pubDate>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/hugging-face-debuts-agent-leaderboard-19-may-2026_20260519.mp3</guid>
+    </item>
+    <item>
       <title>RoPE Long Context Flaws + LLM Latent Bias | 18 May 2026</title>
       <description>The pace of AI innovation feels relentless, a blur of breakthroughs and bold claims pushing the boundaries of what's possible. But beneath the surface, fundamental cracks are appearing in the very architectures we rely on, prompting a critical re-evaluation of current capabilities and future directions.
 
