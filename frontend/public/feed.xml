@@ -12,6 +12,36 @@
     <itunes:category text="Technology"/>
     <itunes:category text="Education"/>
     <item>
+      <title>LLM Agents: Evolution &amp; Efficient Inference | 21 May 2026</title>
+      <description>The AI landscape is moving at a breakneck pace, with breakthroughs pushing the boundaries of what models can do. Today, we're dissecting the very architecture of intelligence itself, exploring how LLMs are not just getting smarter, but evolving into truly autonomous agents.
+
+From the cutting edge of research labs pushing &quot;frontier&quot; capabilities to the practical challenges of deploying massive models in the real world, the stakes for efficiency and robustness have never been higher. Major tech players and innovative startups alike are grappling with how to evaluate, evolve, and effectively serve the next generation of AI — but what challenges are they running into, and where are the unexpected breakthroughs emerging?
+
+In this episode:
+- What does it truly take to measure the intelligence of LLM agents, and why are we moving beyond simple outcome leaderboards to understand their deeper capabilities?
+- How are researchers pioneering new methods to simulate and serve even the most complex LLMs, ensuring that scaling doesn't come at the cost of crippling inefficiency?
+- Why are we seeing a surge in autonomous policy exploration, allowing agents to learn and adapt in environments without constant human oversight?
+- Can LLMs transcend abstract tasks to truly automate real-world interactions, from generating GUI code to creating safety-critical scenarios for autonomous driving?
+
+Join us on Neural Newz and unravel the complex evolution of LLM agents, making sense of the bleeding edge in AI.</description>
+      <itunes:summary>The AI landscape is moving at a breakneck pace, with breakthroughs pushing the boundaries of what models can do. Today, we're dissecting the very architecture of intelligence itself, exploring how LLMs are not just getting smarter, but evolving into truly autonomous agents.
+
+From the cutting edge of research labs pushing &quot;frontier&quot; capabilities to the practical challenges of deploying massive models in the real world, the stakes for efficiency and robustness have never been higher. Major tech players and innovative startups alike are grappling with how to evaluate, evolve, and effectively serve the next generation of AI — but what challenges are they running into, and where are the unexpected breakthroughs emerging?
+
+In this episode:
+- What does it truly take to measure the intelligence of LLM agents, and why are we moving beyond simple outcome leaderboards to understand their deeper capabilities?
+- How are researchers pioneering new methods to simulate and serve even the most complex LLMs, ensuring that scaling doesn't come at the cost of crippling inefficiency?
+- Why are we seeing a surge in autonomous policy exploration, allowing agents to learn and adapt in environments without constant human oversight?
+- Can LLMs transcend abstract tasks to truly automate real-world interactions, from generating GUI code to creating safety-critical scenarios for autonomous driving?
+
+Join us on Neural Newz and unravel the complex evolution of LLM agents, making sense of the bleeding edge in AI.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://neural-newz.netlify.app//episodes/llm-agents-evolution-efficient-inference-21-may-2026_20260521.mp3" type="audio/mpeg" length="50699329"/>
+      <pubDate>Thu, 21 May 2026 19:55:22 GMT</pubDate>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/llm-agents-evolution-efficient-inference-21-may-2026_20260521.mp3</guid>
+    </item>
+    <item>
       <title>LLM Agents Go Pro: Trading, GUIs &amp; Identity | 20 May 2026</title>
       <description>The age of true AI agents is no longer a futuristic fantasy, it's unfolding in real-time. But as these agents step into high-stakes domains like finance and professional creative work, new questions emerge about their reliability, autonomy, and even their very identity.
 
