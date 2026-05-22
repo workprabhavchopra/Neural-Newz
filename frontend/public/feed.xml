@@ -12,6 +12,16 @@
     <itunes:category text="Technology"/>
     <itunes:category text="Education"/>
     <item>
+      <title>Neural Newz Daily — 22 May 2026</title>
+      <description>Today on Neural Newz, we're cutting through the noise from arXiv (cs.AI) | arXiv (cs.AI; cross‑list) | arXiv (cs.CL) and more. Tune in for your daily deep-dive into the world of AI. Follow Neural Newz to stay ahead of the curve.</description>
+      <itunes:summary>Today on Neural Newz, we're cutting through the noise from arXiv (cs.AI) | arXiv (cs.AI; cross‑list) | arXiv (cs.CL) and more. Tune in for your daily deep-dive into the world of AI. Follow Neural Newz to stay ahead of the curve.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://neural-newz.netlify.app//episodes/neural-newz-daily-22-may-2026_20260522.mp3" type="audio/mpeg" length="132328"/>
+      <pubDate>Fri, 22 May 2026 18:34:42 GMT</pubDate>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/neural-newz-daily-22-may-2026_20260522.mp3</guid>
+    </item>
+    <item>
       <title>LLM Agents: Evolution &amp; Efficient Inference | 21 May 2026</title>
       <description>The AI landscape is moving at a breakneck pace, with breakthroughs pushing the boundaries of what models can do. Today, we're dissecting the very architecture of intelligence itself, exploring how LLMs are not just getting smarter, but evolving into truly autonomous agents.
 

@@ -1,5 +1,12 @@
 [
   {
+    "title": "Neural Newz Daily \u2014 22 May 2026",
+    "description": "Today on Neural Newz, we're cutting through the noise from arXiv (cs.AI) | arXiv (cs.AI; cross\u2011list) | arXiv (cs.CL) and more. Tune in for your daily deep-dive into the world of AI. Follow Neural Newz to stay ahead of the curve.",
+    "audio_url": "episodes/neural-newz-daily-22-may-2026_20260522.mp3",
+    "length": 132328,
+    "pub_date": "Fri, 22 May 2026 18:34:42 GMT"
+  },
+  {
     "title": "LLM Agents: Evolution & Efficient Inference | 21 May 2026",
     "description": "The AI landscape is moving at a breakneck pace, with breakthroughs pushing the boundaries of what models can do. Today, we're dissecting the very architecture of intelligence itself, exploring how LLMs are not just getting smarter, but evolving into truly autonomous agents.\n\nFrom the cutting edge of research labs pushing \"frontier\" capabilities to the practical challenges of deploying massive models in the real world, the stakes for efficiency and robustness have never been higher. Major tech players and innovative startups alike are grappling with how to evaluate, evolve, and effectively serve the next generation of AI \u2014 but what challenges are they running into, and where are the unexpected breakthroughs emerging?\n\nIn this episode:\n- What does it truly take to measure the intelligence of LLM agents, and why are we moving beyond simple outcome leaderboards to understand their deeper capabilities?\n- How are researchers pioneering new methods to simulate and serve even the most complex LLMs, ensuring that scaling doesn't come at the cost of crippling inefficiency?\n- Why are we seeing a surge in autonomous policy exploration, allowing agents to learn and adapt in environments without constant human oversight?\n- Can LLMs transcend abstract tasks to truly automate real-world interactions, from generating GUI code to creating safety-critical scenarios for autonomous driving?\n\nJoin us on Neural Newz and unravel the complex evolution of LLM agents, making sense of the bleeding edge in AI.",
     "audio_url": "episodes/llm-agents-evolution-efficient-inference-21-may-2026_20260521.mp3",
