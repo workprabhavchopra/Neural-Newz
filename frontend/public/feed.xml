@@ -12,6 +12,38 @@
     <itunes:category text="Technology"/>
     <itunes:category text="Education"/>
     <item>
+      <title>Illusion of Reasoning &amp; Cheaper LLM Agents | 23 May 2026</title>
+      <description>The landscape of artificial intelligence is transforming at an exhilarating pace, with capabilities expanding beyond our wildest predictions. But today, we confront fundamental questions about what these systems truly &quot;know&quot; and how the very economics of their operation are poised for a radical shift.
+
+Leading labs and independent researchers alike are grappling with the core nature of AI intelligence: are the impressive outputs we see from large language models genuine reasoning, or a sophisticated illusion? Meanwhile, as agentic AI systems grow in complexity and ambition, their real-world deployment faces unprecedented challenges in cost and reliability. The implications for every domain, from creative work to critical infrastructure, are immense.
+
+In this episode:
+- How cutting-edge research is challenging the very notion of LLM reasoning, revealing surprising ways these models might be &quot;cheating&quot; our evaluations.
+- Why the economic model for deploying high-quality AI agents might be on the verge of a revolutionary change, promising dramatically reduced operational costs.
+- What it truly means to build reliable, auditable agentic systems that can navigate complex tasks with transparency and trust.
+- How the next generation of guardrails is being designed to safely guide even &quot;adolescent&quot; LLMs through their developmental stages.
+- Why new approaches to evaluating both human and AI prompters are critical for unlocking the full potential of multimodal generation.
+
+Join Neural Newz to unravel these pivotal developments and make sense of the forces shaping our intelligent future.</description>
+      <itunes:summary>The landscape of artificial intelligence is transforming at an exhilarating pace, with capabilities expanding beyond our wildest predictions. But today, we confront fundamental questions about what these systems truly &quot;know&quot; and how the very economics of their operation are poised for a radical shift.
+
+Leading labs and independent researchers alike are grappling with the core nature of AI intelligence: are the impressive outputs we see from large language models genuine reasoning, or a sophisticated illusion? Meanwhile, as agentic AI systems grow in complexity and ambition, their real-world deployment faces unprecedented challenges in cost and reliability. The implications for every domain, from creative work to critical infrastructure, are immense.
+
+In this episode:
+- How cutting-edge research is challenging the very notion of LLM reasoning, revealing surprising ways these models might be &quot;cheating&quot; our evaluations.
+- Why the economic model for deploying high-quality AI agents might be on the verge of a revolutionary change, promising dramatically reduced operational costs.
+- What it truly means to build reliable, auditable agentic systems that can navigate complex tasks with transparency and trust.
+- How the next generation of guardrails is being designed to safely guide even &quot;adolescent&quot; LLMs through their developmental stages.
+- Why new approaches to evaluating both human and AI prompters are critical for unlocking the full potential of multimodal generation.
+
+Join Neural Newz to unravel these pivotal developments and make sense of the forces shaping our intelligent future.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://neural-newz.netlify.app//episodes/illusion-of-reasoning-cheaper-llm-agents-23-may-2026_20260523.mp3" type="audio/mpeg" length="52445980"/>
+      <pubDate>Sat, 23 May 2026 16:37:42 GMT</pubDate>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/illusion-of-reasoning-cheaper-llm-agents-23-may-2026_20260523.mp3</guid>
+    </item>
+    <item>
       <title>Neural Newz Daily — 22 May 2026</title>
       <description>Today on Neural Newz, we're cutting through the noise from arXiv (cs.AI) | arXiv (cs.AI; cross‑list) | arXiv (cs.CL) and more. Tune in for your daily deep-dive into the world of AI. Follow Neural Newz to stay ahead of the curve.</description>
       <itunes:summary>Today on Neural Newz, we're cutting through the noise from arXiv (cs.AI) | arXiv (cs.AI; cross‑list) | arXiv (cs.CL) and more. Tune in for your daily deep-dive into the world of AI. Follow Neural Newz to stay ahead of the curve.</itunes:summary>
