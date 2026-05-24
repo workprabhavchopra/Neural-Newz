@@ -12,6 +12,16 @@
     <itunes:category text="Technology"/>
     <itunes:category text="Education"/>
     <item>
+      <title>Neural Newz Daily — 24 May 2026</title>
+      <description>Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.</description>
+      <itunes:summary>Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://neural-newz.netlify.app//episodes/neural-newz-daily-24-may-2026_20260524.mp3" type="audio/mpeg" length="163675"/>
+      <pubDate>Sun, 24 May 2026 16:19:47 GMT</pubDate>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/neural-newz-daily-24-may-2026_20260524.mp3</guid>
+    </item>
+    <item>
       <title>Illusion of Reasoning &amp; Cheaper LLM Agents | 23 May 2026</title>
       <description>The landscape of artificial intelligence is transforming at an exhilarating pace, with capabilities expanding beyond our wildest predictions. But today, we confront fundamental questions about what these systems truly &quot;know&quot; and how the very economics of their operation are poised for a radical shift.
 
