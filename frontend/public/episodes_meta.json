@@ -1,5 +1,12 @@
 [
   {
+    "title": "LLM Efficiency: Long Context & KV Cache | 25 May 2026",
+    "description": "The relentless pace of AI development means today's breakthroughs are tomorrow's bottlenecks. We're diving deep into the critical, often unseen, engineering challenges that dictate how far and fast our most powerful language models can truly scale.\n\nThe race for hyper-efficient, long-context LLMs is heating up, with every major player seeking to wring more performance out of less compute. From novel memory architectures to distributed inference strategies, the fundamental physics of AI are being re-written. But what happens when these advanced models encounter their own limitations, and where are the unexpected opportunities for optimization?\n\nIn this episode:\n- How are researchers fundamentally reimagining the KV cache architecture to drastically reduce memory overhead for massive context windows?\n- What hidden flaws are still lurking in long-context LLMs, and why are even our best benchmarks failing to detect them?\n- Why is the strategic distribution of LLM inference becoming as critical as the models themselves, especially when integrating with renewable energy sources?\n- How can we make autonomous AI agents handle incredibly complex, multi-step tasks without getting bogged down by an explosion of state and computation?\n\nTune in to discover the innovations quietly reshaping the future of AI efficiency.",
+    "audio_url": "episodes/llm-efficiency-long-context-kv-cache-25-may-2026_20260525.mp3",
+    "length": 39865826,
+    "pub_date": "Mon, 25 May 2026 18:38:11 GMT"
+  },
+  {
     "title": "Neural Newz Daily \u2014 24 May 2026",
     "description": "Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.",
     "audio_url": "episodes/neural-newz-daily-24-may-2026_20260524.mp3",

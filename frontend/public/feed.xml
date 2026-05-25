@@ -12,6 +12,36 @@
     <itunes:category text="Technology"/>
     <itunes:category text="Education"/>
     <item>
+      <title>LLM Efficiency: Long Context &amp; KV Cache | 25 May 2026</title>
+      <description>The relentless pace of AI development means today's breakthroughs are tomorrow's bottlenecks. We're diving deep into the critical, often unseen, engineering challenges that dictate how far and fast our most powerful language models can truly scale.
+
+The race for hyper-efficient, long-context LLMs is heating up, with every major player seeking to wring more performance out of less compute. From novel memory architectures to distributed inference strategies, the fundamental physics of AI are being re-written. But what happens when these advanced models encounter their own limitations, and where are the unexpected opportunities for optimization?
+
+In this episode:
+- How are researchers fundamentally reimagining the KV cache architecture to drastically reduce memory overhead for massive context windows?
+- What hidden flaws are still lurking in long-context LLMs, and why are even our best benchmarks failing to detect them?
+- Why is the strategic distribution of LLM inference becoming as critical as the models themselves, especially when integrating with renewable energy sources?
+- How can we make autonomous AI agents handle incredibly complex, multi-step tasks without getting bogged down by an explosion of state and computation?
+
+Tune in to discover the innovations quietly reshaping the future of AI efficiency.</description>
+      <itunes:summary>The relentless pace of AI development means today's breakthroughs are tomorrow's bottlenecks. We're diving deep into the critical, often unseen, engineering challenges that dictate how far and fast our most powerful language models can truly scale.
+
+The race for hyper-efficient, long-context LLMs is heating up, with every major player seeking to wring more performance out of less compute. From novel memory architectures to distributed inference strategies, the fundamental physics of AI are being re-written. But what happens when these advanced models encounter their own limitations, and where are the unexpected opportunities for optimization?
+
+In this episode:
+- How are researchers fundamentally reimagining the KV cache architecture to drastically reduce memory overhead for massive context windows?
+- What hidden flaws are still lurking in long-context LLMs, and why are even our best benchmarks failing to detect them?
+- Why is the strategic distribution of LLM inference becoming as critical as the models themselves, especially when integrating with renewable energy sources?
+- How can we make autonomous AI agents handle incredibly complex, multi-step tasks without getting bogged down by an explosion of state and computation?
+
+Tune in to discover the innovations quietly reshaping the future of AI efficiency.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://neural-newz.netlify.app//episodes/llm-efficiency-long-context-kv-cache-25-may-2026_20260525.mp3" type="audio/mpeg" length="39865826"/>
+      <pubDate>Mon, 25 May 2026 18:38:11 GMT</pubDate>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/llm-efficiency-long-context-kv-cache-25-may-2026_20260525.mp3</guid>
+    </item>
+    <item>
       <title>Neural Newz Daily — 24 May 2026</title>
       <description>Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.</description>
       <itunes:summary>Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.</itunes:summary>
