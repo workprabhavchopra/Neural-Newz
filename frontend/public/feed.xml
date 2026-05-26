@@ -12,6 +12,38 @@
     <itunes:category text="Technology"/>
     <itunes:category text="Education"/>
     <item>
+      <title>Anthropic's Olah on Faith + AutoSciLab | 26 May 2026</title>
+      <description>The AI landscape feels electric, charged with both audacious breakthroughs and profound ethical questions. Today, a leading voice from Anthropic steps into an unexpected arena, hinting at what truly guides their vision for advanced intelligence.
+
+From the burgeoning power of LLM agents demanding new memory architectures, to the promise of AI-driven scientific discovery, the pace is relentless. We're seeing intense debates around responsible AI through open-source regulatory judges, and continuous innovation in scaling and efficiency. What do these diverse threads reveal about the direction of AI's future, and where do the biggest players see humanity's place within it?
+
+In this episode:
+- Why is Anthropic's co-founder engaging with ancient religious texts, and what does Pope Leo XIV's &quot;Magnifica humanitas&quot; mean for AI development today?
+- How are researchers finally tackling the elusive challenge of long-context memory for LLM agents, and what revolutionary framework promises to keep them from forgetting?
+- What happens when AI turns its intelligence upon scientific research itself, and could a &quot;Closed-Loop Scientific Discovery&quot; system redefine the pace of human knowledge?
+- As open-source regulatory judges emerge, what critical failure modes are already being uncovered, and what does this mean for the practical deployment of AI governance?
+- How are cutting-edge architectural advancements like preemptive routing for MoE and novel caching mechanisms shaping the next generation of efficient, powerful models?
+
+Tune into Neural Newz and make sense of the signals in the AI storm.</description>
+      <itunes:summary>The AI landscape feels electric, charged with both audacious breakthroughs and profound ethical questions. Today, a leading voice from Anthropic steps into an unexpected arena, hinting at what truly guides their vision for advanced intelligence.
+
+From the burgeoning power of LLM agents demanding new memory architectures, to the promise of AI-driven scientific discovery, the pace is relentless. We're seeing intense debates around responsible AI through open-source regulatory judges, and continuous innovation in scaling and efficiency. What do these diverse threads reveal about the direction of AI's future, and where do the biggest players see humanity's place within it?
+
+In this episode:
+- Why is Anthropic's co-founder engaging with ancient religious texts, and what does Pope Leo XIV's &quot;Magnifica humanitas&quot; mean for AI development today?
+- How are researchers finally tackling the elusive challenge of long-context memory for LLM agents, and what revolutionary framework promises to keep them from forgetting?
+- What happens when AI turns its intelligence upon scientific research itself, and could a &quot;Closed-Loop Scientific Discovery&quot; system redefine the pace of human knowledge?
+- As open-source regulatory judges emerge, what critical failure modes are already being uncovered, and what does this mean for the practical deployment of AI governance?
+- How are cutting-edge architectural advancements like preemptive routing for MoE and novel caching mechanisms shaping the next generation of efficient, powerful models?
+
+Tune into Neural Newz and make sense of the signals in the AI storm.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://neural-newz.netlify.app//episodes/anthropics-olah-on-faith-autoscilab-26-may-2026_20260526.mp3" type="audio/mpeg" length="42529062"/>
+      <pubDate>Tue, 26 May 2026 20:48:59 GMT</pubDate>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/anthropics-olah-on-faith-autoscilab-26-may-2026_20260526.mp3</guid>
+    </item>
+    <item>
       <title>LLM Efficiency: Long Context &amp; KV Cache | 25 May 2026</title>
       <description>The relentless pace of AI development means today's breakthroughs are tomorrow's bottlenecks. We're diving deep into the critical, often unseen, engineering challenges that dictate how far and fast our most powerful language models can truly scale.
 
