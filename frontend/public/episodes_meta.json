@@ -1,5 +1,12 @@
 [
   {
+    "title": "Neural Newz Daily \u2014 28 May 2026",
+    "description": "Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.",
+    "audio_url": "episodes/neural-newz-daily-28-may-2026_20260528.mp3",
+    "length": 163675,
+    "pub_date": "Thu, 28 May 2026 16:53:01 GMT"
+  },
+  {
     "title": "Human-Level Research & Data Recovery Breakthroughs | 27 May 2026",
     "description": "The pace of AI development continues to accelerate, with each day bringing capabilities that redefine the possible. Today, we unpack pivotal advancements that bring us closer to truly autonomous intelligence and raise crucial new questions about data privacy and control.\n\nFrom labs pushing the very limits of what AI can discover on its own, to the intricate challenges of securing sensitive data within trained models, the stakes couldn't be higher. Are we on the cusp of machines performing human-level scientific inquiry? And what are the broader implications when private information might be extracted from models previously considered secure?\n\nIn this episode:\n- What if AI could not only generate research but rigorously audit its own findings, bringing us closer to truly autonomous scientific discovery?\n- How are new techniques revealing the potential to recover specific, verbatim training data previously thought to be hidden deep within finetuned models?\n- When an AI's internal reasoning becomes more sophisticated, what does it mean for our ability to reliably steer its behavior or ensure it refuses inappropriate requests?\n- In the race for compelling speech synthesis, what new, disciplined approach is allowing open-source projects to rival the quality of proprietary systems?\n\nJoin us on Neural Newz to navigate the crucial insights shaping the future of AI, daily.",
     "audio_url": "episodes/human-level-research-data-recovery-breakthroughs-27-may-2026_20260527.mp3",

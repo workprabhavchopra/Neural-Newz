@@ -12,6 +12,16 @@
     <itunes:category text="Technology"/>
     <itunes:category text="Education"/>
     <item>
+      <title>Neural Newz Daily — 28 May 2026</title>
+      <description>Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.</description>
+      <itunes:summary>Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://neural-newz.netlify.app//episodes/neural-newz-daily-28-may-2026_20260528.mp3" type="audio/mpeg" length="163675"/>
+      <pubDate>Thu, 28 May 2026 16:53:01 GMT</pubDate>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/neural-newz-daily-28-may-2026_20260528.mp3</guid>
+    </item>
+    <item>
       <title>Human-Level Research &amp; Data Recovery Breakthroughs | 27 May 2026</title>
       <description>The pace of AI development continues to accelerate, with each day bringing capabilities that redefine the possible. Today, we unpack pivotal advancements that bring us closer to truly autonomous intelligence and raise crucial new questions about data privacy and control.
 
