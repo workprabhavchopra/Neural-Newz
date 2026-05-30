@@ -12,6 +12,34 @@
     <itunes:category text="Technology"/>
     <itunes:category text="Education"/>
     <item>
+      <title>Agent Safety: Web Vulnerabilities &amp; Guardrails | 30 May 2026</title>
+      <description>The race to deploy AI agents is accelerating, pushing the boundaries of what autonomous systems can achieve. But as these agents venture further into the digital wild, a critical question emerges: how do we ensure they don't become their own worst enemy?
+
+From advanced multimodal research agents to those navigating the open internet, the stakes are higher than ever. What happens when helpfulness turns into a liability, or when the very act of seeking information introduces unforeseen risks? We're seeing labs grapple with fundamental challenges in keeping these systems aligned and robust.
+
+In this episode:
+- Why connecting LLM agents to the web introduces a whole new class of safety concerns – and the sophisticated defenses being engineered to contain them.
+- How the desire for a truly &quot;helpful&quot; AI can paradoxically make it susceptible to subtle distractions and implicit misdirection.
+- What new architectures are enabling agents to conduct verifiable, multimodal research or manage long-term memory in complex environments.
+
+Follow Neural Newz and make every day in AI make sense.</description>
+      <itunes:summary>The race to deploy AI agents is accelerating, pushing the boundaries of what autonomous systems can achieve. But as these agents venture further into the digital wild, a critical question emerges: how do we ensure they don't become their own worst enemy?
+
+From advanced multimodal research agents to those navigating the open internet, the stakes are higher than ever. What happens when helpfulness turns into a liability, or when the very act of seeking information introduces unforeseen risks? We're seeing labs grapple with fundamental challenges in keeping these systems aligned and robust.
+
+In this episode:
+- Why connecting LLM agents to the web introduces a whole new class of safety concerns – and the sophisticated defenses being engineered to contain them.
+- How the desire for a truly &quot;helpful&quot; AI can paradoxically make it susceptible to subtle distractions and implicit misdirection.
+- What new architectures are enabling agents to conduct verifiable, multimodal research or manage long-term memory in complex environments.
+
+Follow Neural Newz and make every day in AI make sense.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://neural-newz.netlify.app//episodes/agent-safety-web-vulnerabilities-guardrails-30-may-2026_20260530.mp3" type="audio/mpeg" length="48324484"/>
+      <pubDate>Sat, 30 May 2026 14:43:29 GMT</pubDate>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/agent-safety-web-vulnerabilities-guardrails-30-may-2026_20260530.mp3</guid>
+    </item>
+    <item>
       <title>Neural Newz Daily — 29 May 2026</title>
       <description>The tectonic plates of AI are shifting rapidly beneath our feet, making headlines feel like seismic events. Today, a pivotal player just made an enormous financial move alongside a significant product upgrade, signaling a new intensity in the AI arms race.
 
