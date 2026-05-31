@@ -1,5 +1,12 @@
 [
   {
+    "title": "Neural Newz Daily \u2014 31 May 2026",
+    "description": "Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.",
+    "audio_url": "episodes/neural-newz-daily-31-may-2026_20260531.mp3",
+    "length": 163675,
+    "pub_date": "Sun, 31 May 2026 14:33:57 GMT"
+  },
+  {
     "title": "Agent Safety: Web Vulnerabilities & Guardrails | 30 May 2026",
     "description": "The race to deploy AI agents is accelerating, pushing the boundaries of what autonomous systems can achieve. But as these agents venture further into the digital wild, a critical question emerges: how do we ensure they don't become their own worst enemy?\n\nFrom advanced multimodal research agents to those navigating the open internet, the stakes are higher than ever. What happens when helpfulness turns into a liability, or when the very act of seeking information introduces unforeseen risks? We're seeing labs grapple with fundamental challenges in keeping these systems aligned and robust.\n\nIn this episode:\n- Why connecting LLM agents to the web introduces a whole new class of safety concerns \u2013 and the sophisticated defenses being engineered to contain them.\n- How the desire for a truly \"helpful\" AI can paradoxically make it susceptible to subtle distractions and implicit misdirection.\n- What new architectures are enabling agents to conduct verifiable, multimodal research or manage long-term memory in complex environments.\n\nFollow Neural Newz and make every day in AI make sense.",
     "audio_url": "episodes/agent-safety-web-vulnerabilities-guardrails-30-may-2026_20260530.mp3",
