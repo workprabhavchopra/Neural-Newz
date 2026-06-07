@@ -12,6 +12,16 @@
     <itunes:category text="Technology"/>
     <itunes:category text="Education"/>
     <item>
+      <title>Neural Newz Daily — 7 June 2026</title>
+      <description>Today on Neural Newz, we're cutting through the noise from Hugging Face | Hugging Face | Hugging Face | NVIDIA / Hugging Face and more. Tune in for your daily deep-dive into the world of AI. Follow Neural Newz to stay ahead of the curve.</description>
+      <itunes:summary>Today on Neural Newz, we're cutting through the noise from Hugging Face | Hugging Face | Hugging Face | NVIDIA / Hugging Face and more. Tune in for your daily deep-dive into the world of AI. Follow Neural Newz to stay ahead of the curve.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://neural-newz.netlify.app//episodes/neural-newz-daily-7-june-2026_20260607.mp3" type="audio/mpeg" length="132328"/>
+      <pubDate>Sun, 07 Jun 2026 14:41:31 GMT</pubDate>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/neural-newz-daily-7-june-2026_20260607.mp3</guid>
+    </item>
+    <item>
       <title>Anthropic IPO &amp; AI Pause, US AI Act | 6 June 2026</title>
       <description>The AI landscape is not just evolving, it's undergoing a seismic shift, with every new release and policy debate reshaping the very foundations of our future. A central player is making moves that could define the next era of development – while simultaneously urging the world to hit the brakes.
 
