@@ -12,6 +12,16 @@
     <itunes:category text="Technology"/>
     <itunes:category text="Education"/>
     <item>
+      <title>Neural Newz Daily — 9 June 2026</title>
+      <description>Today on Neural Newz, we're cutting through the noise from Google Cloud | Alphabet / Google Blog | ArXiv | ArXiv and more. Tune in for your daily deep-dive into the world of AI. Follow Neural Newz to stay ahead of the curve.</description>
+      <itunes:summary>Today on Neural Newz, we're cutting through the noise from Google Cloud | Alphabet / Google Blog | ArXiv | ArXiv and more. Tune in for your daily deep-dive into the world of AI. Follow Neural Newz to stay ahead of the curve.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://neural-newz.netlify.app//episodes/neural-newz-daily-9-june-2026_20260609.mp3" type="audio/mpeg" length="47183456"/>
+      <pubDate>Tue, 09 Jun 2026 16:07:27 GMT</pubDate>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/neural-newz-daily-9-june-2026_20260609.mp3</guid>
+    </item>
+    <item>
       <title>Neural Newz Daily — 8 June 2026</title>
       <description>The AI revolution isn't just building new tools; it's fundamentally reshaping our understanding of progress itself. Today, a seismic declaration from a key AI lab forces us to confront an existential question about the very nature of advanced intelligence and its future path.
 
