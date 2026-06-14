@@ -12,6 +12,36 @@
     <itunes:category text="Technology"/>
     <itunes:category text="Education"/>
     <item>
+      <title>Claude API Overhaul + Web Agents Go General | 14 June 2026</title>
+      <description>The pace of AI innovation feels less like a sprint and more like an accelerating superhighway, with new paradigms emerging daily. Today, we dive deep into a critical shift by a major frontier model provider, and the surprising ways AI agents are learning to conquer the digital world.
+
+Amidst intense regulatory scrutiny and a relentless push for more capable systems, developers are bracing for changes that could redefine how they build with leading AI. Simultaneously, new research hints at a future where AI isn't just generating text, but actively navigating and interacting with the complex, dynamic environment of the internet itself. What does it mean when machines start to truly 'see' and 'think' across the web?
+
+In this episode:
+- Why a looming deadline from one of the industry's biggest players has developers scrambling and what its long-term implications are for the AI economy.
+- How cutting-edge research is pushing AI agents past simple tasks, enabling them to robustly interact with and explore the vast, unstructured environment of the web.
+- What it takes for multiple AI agents to not just collaborate, but to truly understand and even 'think together' to solve complex visual problems without hallucinating.
+- The novel architectural breakthroughs that are allowing AI models to learn more efficiently from trials, errors, and even subtle neighbor interactions, without massive memory overheads.
+
+Tune in to Neural Newz and make sense of the AI frontier, one groundbreaking development at a time.</description>
+      <itunes:summary>The pace of AI innovation feels less like a sprint and more like an accelerating superhighway, with new paradigms emerging daily. Today, we dive deep into a critical shift by a major frontier model provider, and the surprising ways AI agents are learning to conquer the digital world.
+
+Amidst intense regulatory scrutiny and a relentless push for more capable systems, developers are bracing for changes that could redefine how they build with leading AI. Simultaneously, new research hints at a future where AI isn't just generating text, but actively navigating and interacting with the complex, dynamic environment of the internet itself. What does it mean when machines start to truly 'see' and 'think' across the web?
+
+In this episode:
+- Why a looming deadline from one of the industry's biggest players has developers scrambling and what its long-term implications are for the AI economy.
+- How cutting-edge research is pushing AI agents past simple tasks, enabling them to robustly interact with and explore the vast, unstructured environment of the web.
+- What it takes for multiple AI agents to not just collaborate, but to truly understand and even 'think together' to solve complex visual problems without hallucinating.
+- The novel architectural breakthroughs that are allowing AI models to learn more efficiently from trials, errors, and even subtle neighbor interactions, without massive memory overheads.
+
+Tune in to Neural Newz and make sense of the AI frontier, one groundbreaking development at a time.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://neural-newz.netlify.app//episodes/claude-api-overhaul-web-agents-go-general-14-june-2026_20260614.mp3" type="audio/mpeg" length="66990960"/>
+      <pubDate>Sun, 14 Jun 2026 15:27:28 GMT</pubDate>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/claude-api-overhaul-web-agents-go-general-14-june-2026_20260614.mp3</guid>
+    </item>
+    <item>
       <title>US Gov Blocks Claude, Mistral's €20B, KKR's $10B AI | 13 June 2026</title>
       <description>The tectonic plates of AI are shifting with incredible force, revealing new battlegrounds and unprecedented opportunities. Today, we explore the intensifying tug-of-war between national security, market ambitions, and the raw power of next-gen AI.
 
