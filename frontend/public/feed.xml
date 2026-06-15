@@ -12,6 +12,38 @@
     <itunes:category text="Technology"/>
     <itunes:category text="Education"/>
     <item>
+      <title>Llama 4.5 Refresh &amp; Anthropic's White House Meet | 15 June 2026</title>
+      <description>The AI world is a maelstrom of innovation and high-stakes negotiation, where every update and meeting can reshape the future. Today, we unpack how a fresh approach to a foundational model could shake up the open-source landscape, alongside a high-level meeting in Washington that signals big questions for AI's future.
+
+From the labs of Meta to the high halls of the White House, the conversation around AI's capabilities and its governance is intensifying. What does a mid-cycle refresh for a popular open-weight model mean for developers, and what's really at stake when industry leaders convene with federal officials over the very nature of AI itself?
+
+In this episode:
+- What's behind Anthropic's new billing structure for its advanced models, and what might these operational shifts mean for developers and enterprise usage?
+- When senior technical staff from a leading AI lab meet White House officials to address model disputes, what are the complex issues at play, and what could be the long-term implications for regulation and trust?
+- Meta has delivered a significant mid-cycle refresh for its Llama 4 family; we dig into why these open-weight updates are so vital for the AI community, and what this iteration promises for the future of foundational models.
+- From Google DeepMind's innovations in parallel text generation to Kwai's new model for long-video understanding, we explore how specialized architectures are unlocking unprecedented capabilities in AI.
+- As the conversation around ethical AI deepens, we look at how new research on fair reinforcement learning and real-time model introspection is aiming to build more just and interpretable systems.
+
+Tune into Neural Newz and make every day in AI make sense, one breakthrough at a time.</description>
+      <itunes:summary>The AI world is a maelstrom of innovation and high-stakes negotiation, where every update and meeting can reshape the future. Today, we unpack how a fresh approach to a foundational model could shake up the open-source landscape, alongside a high-level meeting in Washington that signals big questions for AI's future.
+
+From the labs of Meta to the high halls of the White House, the conversation around AI's capabilities and its governance is intensifying. What does a mid-cycle refresh for a popular open-weight model mean for developers, and what's really at stake when industry leaders convene with federal officials over the very nature of AI itself?
+
+In this episode:
+- What's behind Anthropic's new billing structure for its advanced models, and what might these operational shifts mean for developers and enterprise usage?
+- When senior technical staff from a leading AI lab meet White House officials to address model disputes, what are the complex issues at play, and what could be the long-term implications for regulation and trust?
+- Meta has delivered a significant mid-cycle refresh for its Llama 4 family; we dig into why these open-weight updates are so vital for the AI community, and what this iteration promises for the future of foundational models.
+- From Google DeepMind's innovations in parallel text generation to Kwai's new model for long-video understanding, we explore how specialized architectures are unlocking unprecedented capabilities in AI.
+- As the conversation around ethical AI deepens, we look at how new research on fair reinforcement learning and real-time model introspection is aiming to build more just and interpretable systems.
+
+Tune into Neural Newz and make every day in AI make sense, one breakthrough at a time.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://neural-newz.netlify.app//episodes/llama-45-refresh-anthropics-white-house-meet-15-june-2026_20260615.mp3" type="audio/mpeg" length="44082617"/>
+      <pubDate>Mon, 15 Jun 2026 17:59:10 GMT</pubDate>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/llama-45-refresh-anthropics-white-house-meet-15-june-2026_20260615.mp3</guid>
+    </item>
+    <item>
       <title>Claude API Overhaul + Web Agents Go General | 14 June 2026</title>
       <description>The pace of AI innovation feels less like a sprint and more like an accelerating superhighway, with new paradigms emerging daily. Today, we dive deep into a critical shift by a major frontier model provider, and the surprising ways AI agents are learning to conquer the digital world.
 
