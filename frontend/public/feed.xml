@@ -12,6 +12,16 @@
     <itunes:category text="Technology"/>
     <itunes:category text="Education"/>
     <item>
+      <title>Neural Newz Daily — 24 June 2026</title>
+      <description>Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.</description>
+      <itunes:summary>Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://neural-newz.netlify.app//episodes/neural-newz-daily-24-june-2026_20260624.mp3" type="audio/mpeg" length="163675"/>
+      <pubDate>Wed, 24 Jun 2026 15:36:36 GMT</pubDate>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/neural-newz-daily-24-june-2026_20260624.mp3</guid>
+    </item>
+    <item>
       <title>DeepMind's Gemini 2.5 Pro, Claude Fable 5's Paid Era | 23 June 2026</title>
       <description>The AI landscape is shifting beneath our feet, with foundational models evolving faster than ever. Today, we're tracking seismic moves from key players that could redefine how we interact with intelligence itself.
 
