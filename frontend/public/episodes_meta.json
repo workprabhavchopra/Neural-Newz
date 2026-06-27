@@ -1,5 +1,12 @@
 [
   {
+    "title": "Neural Newz Daily \u2014 27 June 2026",
+    "description": "Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.",
+    "audio_url": "episodes/neural-newz-daily-27-june-2026_20260627.mp3",
+    "length": 163675,
+    "pub_date": "Sat, 27 Jun 2026 14:29:26 GMT"
+  },
+  {
     "title": "OpenAI's Agent Shift + Jalape\u00f1o & Gemini 3.5 | 26 June 2026",
     "description": "The AI landscape is a swirling vortex of innovation, pushing the boundaries of what's possible daily. Today, we're tracking a monumental shift in how major players are thinking about the very nature of intelligent systems \u2013 and what that means for the autonomous future.\n\nThe race for true AI autonomy is heating up, with giants like OpenAI, Google DeepMind, and Anthropic all making moves in the agentic space. But what does it take to empower these agents? From custom silicon powering the next generation of inference to new ways for models to interact with the world and each other, the foundational infrastructure for AI's next leap is being laid down right now.\n\nIn this episode:\n- We dive into why OpenAI's latest research points to a profound reorientation towards agentic capabilities, and what insights their foundational models offer about this strategic shift.\n- We explore how the hardware race is accelerating, with one major player introducing custom silicon to power future AI, while another empowers its flagship models with unprecedented computer interaction skills.\n- We ask what it truly means for autonomous AI when a leading lab begins defining \"agent identity\" and rolling out new access models for team-wide intelligent systems.\n- And for the practitioners, we unpack the cutting-edge in reinforcement learning, exploring new loss functions and distillation techniques that could accelerate agent development for tomorrow's AI.\n\nTune into Neural Newz daily to cut through the noise and make every new development in AI make sense.",
     "audio_url": "episodes/openais-agent-shift-jalape\u00f1o-gemini-35-26-june-2026_20260626.mp3",
