@@ -12,6 +12,16 @@
     <itunes:category text="Technology"/>
     <itunes:category text="Education"/>
     <item>
+      <title>Neural Newz Daily — 29 June 2026</title>
+      <description>Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.</description>
+      <itunes:summary>Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://neural-newz.netlify.app//episodes/neural-newz-daily-29-june-2026_20260629.mp3" type="audio/mpeg" length="163675"/>
+      <pubDate>Mon, 29 Jun 2026 16:40:07 GMT</pubDate>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/neural-newz-daily-29-june-2026_20260629.mp3</guid>
+    </item>
+    <item>
       <title>OpenAI's GPT-5.6 Preview Blocked by White House | 28 June 2026</title>
       <description>The landscape of AI innovation is a dynamic, ever-shifting terrain where technological leaps often collide with unforeseen geopolitical currents. Today, we're dissecting a moment that could fundamentally reshape the delicate balance between cutting-edge development, national security, and the global race for AI supremacy.
 
