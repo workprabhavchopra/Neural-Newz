@@ -12,6 +12,36 @@
     <itunes:category text="Technology"/>
     <itunes:category text="Education"/>
     <item>
+      <title>Neural Newz Daily — 3 July 2026</title>
+      <description>The pace of AI innovation continues to defy expectations, with breakthroughs emerging daily across every vector of intelligence. But what if the biggest story isn't about *what* AI can do, but *how* it's learning to do it for itself – and how we keep it safe?
+
+From Anthropic's bold moves in model re-deployment to Google's advancements in agent development, the industry is grappling with profound questions. What do these latest releases from companies like xAI, Mistral, and Meta tell us about the trajectory of intelligent systems? And how are cutting-edge research papers hinting at entirely new paradigms for perception and reasoning?
+
+In this episode:
+- Why several key players are focusing on a new generation of agentic capabilities, and what challenges arise when models are empowered with greater autonomy.
+- How the push for advanced multimodal interaction is intersecting with critical safety considerations, impacting everything from video creation to code deployment.
+- What the latest developments in specialized AI reveal about automated problem-solving and next-level document understanding.
+- How researchers are rethinking core AI architectures, uncovering new ways for models to learn, remember, and even train themselves.
+
+Tune in to Neural Newz and make every day in AI make sense.</description>
+      <itunes:summary>The pace of AI innovation continues to defy expectations, with breakthroughs emerging daily across every vector of intelligence. But what if the biggest story isn't about *what* AI can do, but *how* it's learning to do it for itself – and how we keep it safe?
+
+From Anthropic's bold moves in model re-deployment to Google's advancements in agent development, the industry is grappling with profound questions. What do these latest releases from companies like xAI, Mistral, and Meta tell us about the trajectory of intelligent systems? And how are cutting-edge research papers hinting at entirely new paradigms for perception and reasoning?
+
+In this episode:
+- Why several key players are focusing on a new generation of agentic capabilities, and what challenges arise when models are empowered with greater autonomy.
+- How the push for advanced multimodal interaction is intersecting with critical safety considerations, impacting everything from video creation to code deployment.
+- What the latest developments in specialized AI reveal about automated problem-solving and next-level document understanding.
+- How researchers are rethinking core AI architectures, uncovering new ways for models to learn, remember, and even train themselves.
+
+Tune in to Neural Newz and make every day in AI make sense.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://neural-newz.netlify.app//episodes/neural-newz-daily-3-july-2026_20260703.mp3" type="audio/mpeg" length="59727247"/>
+      <pubDate>Fri, 03 Jul 2026 15:17:54 GMT</pubDate>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/neural-newz-daily-3-july-2026_20260703.mp3</guid>
+    </item>
+    <item>
       <title>OpenAI GPT-5.6 &amp; Meituan LongCat-2.0 | 2 July 2026</title>
       <description>The AI landscape is buzzing, a vibrant, complex ecosystem of innovation, ambition, and strategic plays that are reshaping global tech at an unprecedented pace. This week, we're seeing shifts that challenge our understanding of who's leading, how they're doing it, and what the true cost of frontier AI might become.
 
