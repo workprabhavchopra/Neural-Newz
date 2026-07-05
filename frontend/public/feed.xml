@@ -12,6 +12,38 @@
     <itunes:category text="Technology"/>
     <itunes:category text="Education"/>
     <item>
+      <title>Meituan's LongCat 2.0 + Claude Science Beta | 5 July 2026</title>
+      <description>The pace of AI innovation feels less like a race and more like an explosion this week. Today, we're dissecting how major players are not just building models, but fundamentally reshaping how AI interacts with science, code, and even our everyday lives.
+
+From the intricate labs of scientific discovery to the casual apps in your pocket, and industrial giants reorienting their strategy, the question isn't just what new models have emerged. We explore the deeper implications of AI agents transforming everything from high-stakes scientific research and automated reasoning to massive enterprise deployments, and how even our developer tools are evolving to keep up.
+
+In this episode:
+- We dive into what it means when a new giant-scale model arrives, specifically optimized for the complex dance of agentic coding.
+- We explore how Anthropic is aiming to revolutionize scientific reproducibility with its ambitious new multi-agent workbench, promising to transform research workflows.
+- We unpack why Microsoft is making such a monumental investment in a dedicated enterprise AI deployment business, and what that signals for the future of business intelligence.
+- We question why Meta is suddenly stepping into the 'vibe-coded' mini-game arena, and what AI's role is in this surprising new app designed for casual fun.
+- And we reveal how a new native bridge for Chrome DevTools could fundamentally alter how developers interact with their coding agents, bridging the gap between human and AI workflows, and what new research is enabling on-device intelligence.
+
+Join Neural Newz and keep pace with the accelerating intelligence revolution.</description>
+      <itunes:summary>The pace of AI innovation feels less like a race and more like an explosion this week. Today, we're dissecting how major players are not just building models, but fundamentally reshaping how AI interacts with science, code, and even our everyday lives.
+
+From the intricate labs of scientific discovery to the casual apps in your pocket, and industrial giants reorienting their strategy, the question isn't just what new models have emerged. We explore the deeper implications of AI agents transforming everything from high-stakes scientific research and automated reasoning to massive enterprise deployments, and how even our developer tools are evolving to keep up.
+
+In this episode:
+- We dive into what it means when a new giant-scale model arrives, specifically optimized for the complex dance of agentic coding.
+- We explore how Anthropic is aiming to revolutionize scientific reproducibility with its ambitious new multi-agent workbench, promising to transform research workflows.
+- We unpack why Microsoft is making such a monumental investment in a dedicated enterprise AI deployment business, and what that signals for the future of business intelligence.
+- We question why Meta is suddenly stepping into the 'vibe-coded' mini-game arena, and what AI's role is in this surprising new app designed for casual fun.
+- And we reveal how a new native bridge for Chrome DevTools could fundamentally alter how developers interact with their coding agents, bridging the gap between human and AI workflows, and what new research is enabling on-device intelligence.
+
+Join Neural Newz and keep pace with the accelerating intelligence revolution.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://neural-newz.netlify.app//episodes/meituans-longcat-20-claude-science-beta-5-july-2026_20260705.mp3" type="audio/mpeg" length="48309438"/>
+      <pubDate>Sun, 05 Jul 2026 14:40:18 GMT</pubDate>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/meituans-longcat-20-claude-science-beta-5-july-2026_20260705.mp3</guid>
+    </item>
+    <item>
       <title>Anthropic: China Curbs &amp; IPO Push | 4 July 2026</title>
       <description>The global AI race is heating up, with every move from the titans echoing across the industry. Today, a key player is making strategic shifts on two fronts that could redefine market access and future valuations.
 
