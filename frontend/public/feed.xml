@@ -12,6 +12,38 @@
     <itunes:category text="Technology"/>
     <itunes:category text="Education"/>
     <item>
+      <title>LLM Context &amp; Personalization: MosaicKV &amp; PAPA | 6 July 2026</title>
+      <description>The AI race isn't just about bigger models anymore; it's about making them truly intelligent and deeply personal. Today, we unpack the cutting-edge breakthroughs that promise to transform how we interact with LLMs, pushing the boundaries of what they can remember and how they adapt to *you*.
+
+As companies push for ever-longer context windows and more nuanced user experiences, the engineering challenges are immense. Are we finally cracking the code on efficiently remembering vast amounts of information, and what does it mean for the future of truly adaptive, personalized AI agents? We explore the new paradigms emerging from top research labs.
+
+In this episode:
+- How are researchers overcoming the monumental memory hurdles to give LLMs virtually limitless context, and what dynamic new strategies are being deployed?
+- What if your LLM could learn your preferences in real-time and actively align itself with your evolving needs, and how does this online personalization really work?
+- We explore a radical new vision for language models based on &quot;prototypes&quot; – what does this mean for how we build and understand them?
+- Beyond text, how are new benchmarks shining a light on previously unseen safety risks as AI ventures into generative chemistry and materials science?
+- Why is representation a critical bottleneck for understanding how LLMs actually work, and what new protocols are emerging to finally unblock mechanistic interpretability?
+
+Tune into Neural Newz and make every day in AI make sense.</description>
+      <itunes:summary>The AI race isn't just about bigger models anymore; it's about making them truly intelligent and deeply personal. Today, we unpack the cutting-edge breakthroughs that promise to transform how we interact with LLMs, pushing the boundaries of what they can remember and how they adapt to *you*.
+
+As companies push for ever-longer context windows and more nuanced user experiences, the engineering challenges are immense. Are we finally cracking the code on efficiently remembering vast amounts of information, and what does it mean for the future of truly adaptive, personalized AI agents? We explore the new paradigms emerging from top research labs.
+
+In this episode:
+- How are researchers overcoming the monumental memory hurdles to give LLMs virtually limitless context, and what dynamic new strategies are being deployed?
+- What if your LLM could learn your preferences in real-time and actively align itself with your evolving needs, and how does this online personalization really work?
+- We explore a radical new vision for language models based on &quot;prototypes&quot; – what does this mean for how we build and understand them?
+- Beyond text, how are new benchmarks shining a light on previously unseen safety risks as AI ventures into generative chemistry and materials science?
+- Why is representation a critical bottleneck for understanding how LLMs actually work, and what new protocols are emerging to finally unblock mechanistic interpretability?
+
+Tune into Neural Newz and make every day in AI make sense.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://neural-newz.netlify.app//episodes/llm-context-personalization-mosaickv-papa-6-july-2026_20260706.mp3" type="audio/mpeg" length="49022267"/>
+      <pubDate>Mon, 06 Jul 2026 16:29:28 GMT</pubDate>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/llm-context-personalization-mosaickv-papa-6-july-2026_20260706.mp3</guid>
+    </item>
+    <item>
       <title>Meituan's LongCat 2.0 + Claude Science Beta | 5 July 2026</title>
       <description>The pace of AI innovation feels less like a race and more like an explosion this week. Today, we're dissecting how major players are not just building models, but fundamentally reshaping how AI interacts with science, code, and even our everyday lives.
 
