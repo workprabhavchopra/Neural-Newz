@@ -1,5 +1,12 @@
 [
   {
+    "title": "Neural Newz Daily \u2014 7 July 2026",
+    "description": "Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.",
+    "audio_url": "episodes/neural-newz-daily-7-july-2026_20260707.mp3",
+    "length": 163675,
+    "pub_date": "Tue, 07 Jul 2026 15:42:39 GMT"
+  },
+  {
     "title": "LLM Context & Personalization: MosaicKV & PAPA | 6 July 2026",
     "description": "The AI race isn't just about bigger models anymore; it's about making them truly intelligent and deeply personal. Today, we unpack the cutting-edge breakthroughs that promise to transform how we interact with LLMs, pushing the boundaries of what they can remember and how they adapt to *you*.\n\nAs companies push for ever-longer context windows and more nuanced user experiences, the engineering challenges are immense. Are we finally cracking the code on efficiently remembering vast amounts of information, and what does it mean for the future of truly adaptive, personalized AI agents? We explore the new paradigms emerging from top research labs.\n\nIn this episode:\n- How are researchers overcoming the monumental memory hurdles to give LLMs virtually limitless context, and what dynamic new strategies are being deployed?\n- What if your LLM could learn your preferences in real-time and actively align itself with your evolving needs, and how does this online personalization really work?\n- We explore a radical new vision for language models based on \"prototypes\" \u2013 what does this mean for how we build and understand them?\n- Beyond text, how are new benchmarks shining a light on previously unseen safety risks as AI ventures into generative chemistry and materials science?\n- Why is representation a critical bottleneck for understanding how LLMs actually work, and what new protocols are emerging to finally unblock mechanistic interpretability?\n\nTune into Neural Newz and make every day in AI make sense.",
     "audio_url": "episodes/llm-context-personalization-mosaickv-papa-6-july-2026_20260706.mp3",

@@ -12,6 +12,16 @@
     <itunes:category text="Technology"/>
     <itunes:category text="Education"/>
     <item>
+      <title>Neural Newz Daily — 7 July 2026</title>
+      <description>Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.</description>
+      <itunes:summary>Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://neural-newz.netlify.app//episodes/neural-newz-daily-7-july-2026_20260707.mp3" type="audio/mpeg" length="163675"/>
+      <pubDate>Tue, 07 Jul 2026 15:42:39 GMT</pubDate>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/neural-newz-daily-7-july-2026_20260707.mp3</guid>
+    </item>
+    <item>
       <title>LLM Context &amp; Personalization: MosaicKV &amp; PAPA | 6 July 2026</title>
       <description>The AI race isn't just about bigger models anymore; it's about making them truly intelligent and deeply personal. Today, we unpack the cutting-edge breakthroughs that promise to transform how we interact with LLMs, pushing the boundaries of what they can remember and how they adapt to *you*.
 
