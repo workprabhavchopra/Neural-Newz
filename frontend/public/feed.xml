@@ -12,6 +12,36 @@
     <itunes:category text="Technology"/>
     <itunes:category text="Education"/>
     <item>
+      <title>GPT-5.6 &amp; Sonnet 5 Face Off | 9 July 2026</title>
+      <description>The AI race isn't just heating up; it's entering a new dimension where the very architecture of intelligence is being redefined. Today, we unpack how the latest moves from two industry titans are setting the stage for the next great computational showdown, and why that matters for everyone.
+
+From the foundational models pushing the boundaries of what's possible, to the subtle but significant shifts in how these powerful tools learn and interact with the world, the ecosystem is buzzing. What do these simultaneous advancements from leading labs signal for the future of general intelligence, and how are other players like Mistral and NVIDIA positioning themselves in this rapidly evolving landscape?
+
+In this episode:
+- What does OpenAI's ambitious GPT-5.6 series reveal about their multi-modal strategy and the scaling laws defining true intelligence?
+- How is Anthropic's Claude Sonnet 5 challenging the status quo with its advanced reasoning, and what implications does this hold for enterprise applications?
+- Why are Mistral AI and NVIDIA making big plays in specific AI applications, and how do their moves contribute to the broader agentic future?
+- What insights from the latest ArXiv deep dives are hinting at the very nature of emergent intelligence, and how are these theoretical shifts influencing practical deployments?
+
+Tune in to Neural Newz for a clear-eyed look at the forces shaping tomorrow's intelligent world.</description>
+      <itunes:summary>The AI race isn't just heating up; it's entering a new dimension where the very architecture of intelligence is being redefined. Today, we unpack how the latest moves from two industry titans are setting the stage for the next great computational showdown, and why that matters for everyone.
+
+From the foundational models pushing the boundaries of what's possible, to the subtle but significant shifts in how these powerful tools learn and interact with the world, the ecosystem is buzzing. What do these simultaneous advancements from leading labs signal for the future of general intelligence, and how are other players like Mistral and NVIDIA positioning themselves in this rapidly evolving landscape?
+
+In this episode:
+- What does OpenAI's ambitious GPT-5.6 series reveal about their multi-modal strategy and the scaling laws defining true intelligence?
+- How is Anthropic's Claude Sonnet 5 challenging the status quo with its advanced reasoning, and what implications does this hold for enterprise applications?
+- Why are Mistral AI and NVIDIA making big plays in specific AI applications, and how do their moves contribute to the broader agentic future?
+- What insights from the latest ArXiv deep dives are hinting at the very nature of emergent intelligence, and how are these theoretical shifts influencing practical deployments?
+
+Tune in to Neural Newz for a clear-eyed look at the forces shaping tomorrow's intelligent world.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://neural-newz.netlify.app//episodes/gpt-56-sonnet-5-face-off-9-july-2026_20260709.mp3" type="audio/mpeg" length="39525399"/>
+      <pubDate>Thu, 09 Jul 2026 16:04:01 GMT</pubDate>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/gpt-56-sonnet-5-face-off-9-july-2026_20260709.mp3</guid>
+    </item>
+    <item>
       <title>Meta Muse &amp; AWS Nova Unlearn | 8 July 2026</title>
       <description>The AI landscape is a hyper-accelerating frontier, where breathtaking new capabilities emerge almost daily, pushing the boundaries of what's possible and what's permissible. Today, we delve into a pivotal moment where model mastery meets strategic positioning, reshaping not just what AI can do, but who controls its ultimate trajectory.
 
