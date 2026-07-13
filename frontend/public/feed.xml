@@ -12,6 +12,16 @@
     <itunes:category text="Technology"/>
     <itunes:category text="Education"/>
     <item>
+      <title>Neural Newz Daily — 13 July 2026</title>
+      <description>Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.</description>
+      <itunes:summary>Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://neural-newz.netlify.app//episodes/neural-newz-daily-13-july-2026_20260713.mp3" type="audio/mpeg" length="163675"/>
+      <pubDate>Mon, 13 Jul 2026 15:31:20 GMT</pubDate>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/neural-newz-daily-13-july-2026_20260713.mp3</guid>
+    </item>
+    <item>
       <title>GPT-Live &amp; Meta's Muse Multimodality | 12 July 2026</title>
       <description>The AI landscape is shifting at an unbelievable pace, with new capabilities emerging almost daily. Today, a handful of key players just dropped bombshell announcements that could fundamentally reshape how we interact with and perceive artificial intelligence.
 
