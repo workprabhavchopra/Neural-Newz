@@ -12,6 +12,16 @@
     <itunes:category text="Technology"/>
     <itunes:category text="Education"/>
     <item>
+      <title>Neural Newz Daily — 28 August 2026</title>
+      <description>Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.</description>
+      <itunes:summary>Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://neural-newz.netlify.app//episodes/neural-newz-daily-28-august-2026_20260828.mp3" type="audio/mpeg" length="163675"/>
+      <pubDate>Fri, 28 Aug 2026 22:35:10 GMT</pubDate>
+      <guid isPermaLink="false">https://neural-newz.netlify.app//episodes/neural-newz-daily-28-august-2026_20260828.mp3</guid>
+    </item>
+    <item>
       <title>Neural Newz Daily — 27 August 2026</title>
       <description>Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.</description>
       <itunes:summary>Your daily deep-dive into the world of AI. Tune in for the latest breakthroughs, product launches, and research from the world's top labs.</itunes:summary>
